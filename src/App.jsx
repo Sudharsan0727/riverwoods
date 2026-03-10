@@ -8,6 +8,7 @@ import AmenitiesIconGrid from './components/AmenitiesIconGrid';
 import LocationHighlights from './components/LocationHighlights';
 import Gallery from './components/Gallery';
 import Testimonials from './components/Testimonials';
+import EnquirySection from './components/EnquirySection';
 import PricingTable from './components/PricingTable';
 import Footer from './components/Footer';
 
@@ -41,6 +42,7 @@ function App() {
         <LocationHighlights />
         <Gallery />
         <Testimonials />
+        <EnquirySection />
       </main>
       <Footer />
     </div>

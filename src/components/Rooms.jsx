@@ -1,32 +1,17 @@
 import React, { useRef, useState } from 'react';
-
-const floorPlan1 = "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop";
-const floorPlan2 = "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop";
-const floorPlan3 = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop";
-const floorPlan4 = "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=2070&auto=format&fit=crop";
+import floorPlan1 from '../assets/img/Floor_plan/2BHK +2T.png';
+import floorPlan2 from '../assets/img/Floor_plan/3BHK + 3T.png';
+import floorPlan3 from '../assets/img/Floor_plan/4BHK + 4T.png';
+import floorPlan4 from '../assets/img/Floor_plan/5BHK + 5T.png';
 
 const roomsData = [
     {
         id: 1,
-        title: "Family Room", 
+        title: "2 BHK + 2T",
         img: floorPlan1,
         price: "₹ 85 L",
-        beds: "2-4 Bed",
-        area: "20 Sqm",
-        extraInfo: "Breakfast",
-        extraIcon: (
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2v3h14v-3h3c1.1 0 2-.9 2-2v-5c0-1.1-.9-2-2-2zm-2 5h-1V9h1v4z" />
-            </svg>
-        )
-    },
-    {
-        id: 2,
-        title: "Double Room", 
-        img: floorPlan2,
-        price: "₹ 1.35 Cr",
-        beds: "4 Bed",
-        area: "25 Sqm",
+        beds: "2 Bed",
+        area: "2 BHK + 2T",
         extraInfo: "2 Bathroom",
         extraIcon: (
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,30 +20,44 @@ const roomsData = [
         )
     },
     {
-        id: 3,
-        title: "Deluxe Suite", 
-        img: floorPlan3,
-        price: "₹ 2.15 Cr",
+        id: 2,
+        title: "3 BHK + 3T",
+        img: floorPlan2,
+        price: "₹ 1.35 Cr",
         beds: "3 Bed",
-        area: "35 Sqm",
-        extraInfo: "Balcony",
+        area: "3 BHK + 3T",
+        extraInfo: "3 Bathroom",
         extraIcon: (
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+        )
+    },
+    {
+        id: 3,
+        title: "4 BHK + 4T",
+        img: floorPlan3,
+        price: "₹ 2.15 Cr",
+        beds: "4 Bed",
+        area: "4 BHK + 4T",
+        extraInfo: "4 Bathroom",
+        extraIcon: (
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
         )
     },
     {
         id: 4,
-        title: "Penthouse", 
+        title: "5 BHK + 5T",
         img: floorPlan4,
         price: "₹ 3.50 Cr",
         beds: "5 Bed",
-        area: "45 Sqm",
-        extraInfo: "Pool View",
+        area: "5 BHK + 5T",
+        extraInfo: "5 Bathroom",
         extraIcon: (
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
         )
     }
@@ -80,8 +79,12 @@ const RoomCard = ({ title, img, beds, area, extraInfo, extraIcon, price, onOpenP
         <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
             <button 
                 onClick={onOpenPopup} 
-                className="bg-gold text-white px-8 py-3.5 rounded-full uppercase tracking-widest text-xs font-bold pointer-events-auto hover:bg-white hover:text-luxury-black transition-colors shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
+                className="bg-gold text-white px-8 py-3.5 rounded-full uppercase tracking-widest text-xs font-bold pointer-events-auto hover:bg-white hover:text-luxury-black transition-colors shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex items-center gap-2"
             >
+                <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0zm-2 0a4 4 0 11-8 0" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M11 9v4m-2-2h4" />
+                </svg>
                 View Plan
             </button>
         </div>
@@ -91,11 +94,7 @@ const RoomCard = ({ title, img, beds, area, extraInfo, extraIcon, price, onOpenP
             
             {/* Left Info Block (Slides up on hover) */}
             <div className="transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                {/* Revealing Price */}
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 mb-2">
-                    <span className="text-2xl font-bold text-white tracking-wide">{price}</span>
-                    <span className="text-sm text-white/70 font-sans ml-2">/ Starting</span>
-                </div>
+
                 
                 <h3 className="text-3xl lg:text-[2rem] font-heading text-white mb-4 transition-colors duration-300 group-hover:text-gold">
                     {title}
@@ -103,14 +102,6 @@ const RoomCard = ({ title, img, beds, area, extraInfo, extraIcon, price, onOpenP
 
                 {/* Bottom Info Bar */}
                 <div className="flex flex-wrap items-center gap-6 text-white/90 text-[13px] font-sans">
-                    {/* Bed / Room info */}
-                    <div className="flex items-center gap-2">
-                        <svg className="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-                        </svg>
-                        <span>{beds}</span>
-                    </div>
-                    
                     {/* Area info */}
                     <div className="flex items-center gap-2">
                         <svg className="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,21 +109,14 @@ const RoomCard = ({ title, img, beds, area, extraInfo, extraIcon, price, onOpenP
                         </svg>
                         <span>{area}</span>
                     </div>
-
-                    {/* Extra info (e.g. Bathroom, Breakfast) */}
-                    {extraInfo && (
-                        <div className="flex items-center gap-2">
-                            <span className="text-gold">
-                                {extraIcon}
-                            </span>
-                            <span>{extraInfo}</span>
-                        </div>
-                    )}
                 </div>
             </div>
 
             {/* Right Arrow Button (Fades & slides in on hover) */}
-            <div className="opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-out delay-100 shrink-0 hidden sm:block">
+            <div 
+                onClick={onOpenPopup}
+                className="opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-out delay-100 shrink-0 hidden sm:block cursor-pointer"
+            >
                 <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center text-white hover:bg-white hover:text-luxury-black transition-colors shadow-lg">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5l7 7-7 7" />
@@ -162,16 +146,7 @@ const Rooms = () => {
     };
 
     return (
-        <section id="floor-construction" className="py-24 lg:py-32 bg-[#f8f5f0] relative">
-            <style>{`
-                .hide-scroll::-webkit-scrollbar {
-                    display: none;
-                }
-                .hide-scroll {
-                    -ms-overflow-style: none;
-                    scrollbar-width: none;
-                }
-            `}</style>
+        <section id="floor-plan" className="section-padding bg-[#f8f5f0] relative">
             
             <div className="lux-container">
                 {/* Top Header Section */}
@@ -182,15 +157,15 @@ const Rooms = () => {
                         <span className="text-gold uppercase tracking-[0.3em] text-[13px] font-bold mb-4 block">
                             PROJECT DETAILS
                         </span>
-                        <h2 className="text-5xl md:text-6xl lg:text-5xl font-heading leading-[1.1] text-luxury-black mb-0">
-                            Floor <span className="text-gold italic">Construction</span>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading leading-[1.1] text-luxury-black mb-0">
+                            Floor <span className="text-gold italic">Plan</span>
                         </h2>
                     </div>
 
                     {/* Right Content & Controls */}
                     <div className="flex gap-8 lg:gap-16 items-center flex-1 justify-start lg:justify-end animate-fade-up animate-delay-1">
                         <p className="text-luxury-text text-lg leading-relaxed max-w-lg hidden lg:block">
-                            The experience elementum sesue the aucan vestibulum usto sapien rutrum volutan donec fermen lorem ipsum quisque sodales miss in the varius drana miss.
+                            Explore thoughtfully designed floor plans that blend space, comfort, and functionality — crafted to suit modern lifestyles across spacious 2, 3, 4, and 5 BHK homes.
                         </p>
                         
                         {/* Circle Navigation Arrows */}

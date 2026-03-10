@@ -4,71 +4,33 @@ const AmenitiesIconGrid = () => {
     // 6 Premium amenities mirroring the structure
     const allAmenities = [
         {
-            title: "Pick Up & Drop",
-            description: "Elite chauffeur services for your destination.",
-            icon: (
-                <svg className="w-12 h-12 lg:w-14 lg:h-14" fill="none" stroke="currentColor" strokeWidth="1" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16h16M5 16v-2.5a2.5 2.5 0 012.5-2.5h9a2.5 2.5 0 012.5 2.5V16" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 11L9 7h6l1 4" />
-                    <circle cx="7.5" cy="18" r="2" />
-                    <circle cx="16.5" cy="18" r="2" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M11 5l4-2 3 2" />
-                </svg>
-            )
+            title: "Outdoor gym",
+            description: "Stay fit with our state-of-the-art open-air fitness equipment.",
         },
         {
-            title: "Parking Space",
-            description: "Spacious, secure parking with 24/7 surveillance.",
-            icon: (
-                <svg className="w-12 h-12 lg:w-14 lg:h-14" fill="none" stroke="currentColor" strokeWidth="1" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="9" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 8h3a3 3 0 010 6h-3v-6zm0 6v4" />
-                </svg>
-            )
+            title: "Mini-half basket ball hoop",
+            description: "Perfect your game or enjoy a casual shootaround.",
         },
         {
-            title: "Room Service",
-            description: "Exquisite gourmet meals delivered right to you.",
-            icon: (
-                <svg className="w-12 h-12 lg:w-14 lg:h-14" fill="none" stroke="currentColor" strokeWidth="1" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 16h14m-7-2v-4m0 0a2 2 0 110-4 2 2 0 010 4z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 14a6 6 0 0112 0H6z" />
-                </svg>
-            )
+            title: "Multi-purpose gathering zone",
+            description: "A versatile space for community events and social interactions.",
         },
         {
-            title: "Swimming Pool",
-            description: "Temperature-controlled pool with stunning views.",
-            icon: (
-                <svg className="w-12 h-12 lg:w-14 lg:h-14" fill="none" stroke="currentColor" strokeWidth="1" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 15c3-3 6-3 9 0s6 3 9 0M3 19c3-3 6-3 9 0s6 3 9 0" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8V4M8 8V4M16 8V4" />
-                </svg>
-            )
+            title: "Multi-purpose play court",
+            description: "Designed for various sports activities and active living.",
         },
         {
-            title: "Fibre Internet",
-            description: "Blazing fast high-speed digital connectivity.",
-            icon: (
-                <svg className="w-12 h-12 lg:w-14 lg:h-14" fill="none" stroke="currentColor" strokeWidth="1" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 10a10 10 0 0114 0M8 14a6 6 0 018 0M12 18h.01" />
-                </svg>
-            )
+            title: "Kids play area",
+            description: "A safe and fun environment for children to explore and play.",
         },
         {
-            title: "Breakfast",
-            description: "Start each morning with artisanal delicacies.",
-            icon: (
-                <svg className="w-12 h-12 lg:w-14 lg:h-14" fill="none" stroke="currentColor" strokeWidth="1" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 8h10M6 8v6a4 4 0 004 4h2a4 4 0 004-4V8M6 8H4M16 8h2a3 3 0 013 3v1a3 3 0 01-3 3h-2" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 20h16" />
-                </svg>
-            )
+            title: "Sand pit",
+            description: "A dedicated creative play space where young imaginations run free.",
         }
     ];
 
     return (
-        <section id="features" className="py-16 lg:py-24 bg-white relative">
+        <section id="features" className="section-padding bg-white relative">
             <div className="lux-container max-w-[1300px] relative z-10">
                 
                 {/* Asymmetric Split Layout */}
@@ -76,39 +38,36 @@ const AmenitiesIconGrid = () => {
                     
                     {/* Left Column: Info & Button */}
                     <div className="w-full lg:w-[35%] animate-fade-up">
-                        <span className="text-gold uppercase tracking-[0.3em] text-[13px] font-bold mb-4 block">
-                            HOTEL SERVICES
-                        </span>
+
                         
-                        <h2 className="text-5xl md:text-6xl lg:text-5xl font-heading leading-[1.1] text-luxury-black mb-6">
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading leading-[1.1] text-luxury-black mb-6">
                             AMENITIES
                         </h2>
                         
                         <p className="text-xl text-luxury-text leading-relaxed mb-10 max-w-sm">
-                            Discover a world of unparalleled convenience and luxury curated specifically for your modern lifestyle needs.
+                            Discover a world of thoughtfully curated amenities designed to bring comfort, convenience, and luxury to your modern lifestyle.
                         </p>
                         
-                        <button className="btn-gold !shadow-none hover:!translate-y-0 transition-all duration-300">
-                            All Amenities
+                        <button className="relative px-8 py-4 bg-gold text-white font-medium uppercase tracking-[0.2em] text-xs cursor-pointer flex items-center justify-center gap-3 whitespace-nowrap hover:bg-[#6d6d6d] transition-all duration-500">
+                            <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            <span>View Amenities</span>
                         </button>
                     </div>
 
                     {/* Right Column: Grid of Exactly 6 Cards */}
                     <div className="w-full lg:w-[65%]">
-                        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-up animate-delay-1">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-up animate-delay-1">
                             {allAmenities.map((item, index) => (
                                 <div 
                                     key={index} 
-                                    className="group bg-[#f8f5f0] rounded-[4px] min-h-[220px] p-6 flex flex-col items-center justify-center text-center transition-all duration-500 hover:bg-[#be9874] hover:-translate-y-2 cursor-pointer shadow-sm relative overflow-hidden"
+                                    className="group bg-[#f8f5f0] rounded-[4px] min-h-[220px] p-6 flex flex-col items-center justify-center text-center transition-all duration-500 hover:bg-[#9b7a44] hover:-translate-y-2 cursor-pointer shadow-sm relative overflow-hidden"
                                 >
                                     <div className="flex flex-col items-center justify-center transition-transform duration-500 group-hover:-translate-y-2">
-                                        {/* Thin Minimal Icon */}
-                                        <div className="text-[#be9874] group-hover:text-white transition-colors duration-500 mb-4">
-                                            {item.icon}
-                                        </div>
-
                                         {/* Standard Capitalized Title */}
-                                        <h4 className="text-[17px] font-heading font-normal text-[#222222] group-hover:text-white transition-colors duration-500 tracking-wide">
+                                        <h4 className="text-[17px] font-heading font-normal text-[#222222] group-hover:text-white transition-colors duration-500 tracking-wide px-4">
                                             {item.title}
                                         </h4>
                                     </div>

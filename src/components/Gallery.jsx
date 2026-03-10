@@ -1,17 +1,41 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
-import img1 from '../assets/gallery_living_1773057165841.png';
-import img2 from '../assets/gallery_bedroom_1773057183654.png';
-import img3 from '../assets/gallery_kitchen_1773057199358.png';
-import img4 from '../assets/gallery_exterior_1773057213047.png';
-import img5 from '../assets/gallery_pool_1773057230090.png';
+import img1 from '../assets/img/Gallery/Amphitheatre Cam.jpg';
+import img2 from '../assets/img/Gallery/Bedroom Cam.jpg';
+import img3 from '../assets/img/Gallery/Creche Cam.jpg';
+import img4 from '../assets/img/Gallery/Dining Cam.jpg';
+import img5 from '../assets/img/Gallery/Entrance Cam_Eternity.jpg';
+import img6 from '../assets/img/Gallery/Entrance Lobby.jpg';
+import img7 from '../assets/img/Gallery/Gym.jpg';
+import img8 from '../assets/img/Gallery/Indoor Games.jpg';
+import img9 from '../assets/img/Gallery/Kitchen Cam.jpg';
+import img10 from '../assets/img/Gallery/Living Dining Cam.jpg';
+import img11 from '../assets/img/Gallery/Night Aerial Cam.jpg';
+import img12 from '../assets/img/Gallery/Osr 01a.jpg';
+import img13 from '../assets/img/Gallery/Pool Cam Night.jpg';
+import img14 from '../assets/img/Gallery/Road Cam Day.jpg';
+import img15 from '../assets/img/Gallery/Semi Aerial Cam.jpg';
+import img16 from '../assets/img/Gallery/Semi Aerial Day.jpg';
+import img17 from '../assets/img/Gallery/Swmming pool View_01a.jpg';
 
 const slides = [
-    { id: 1, img: img1, title: "Living Room",     tag: "INTERIORS" },
-    { id: 2, img: img2, title: "Master Bedroom",  tag: "COMFORT" },
-    { id: 3, img: img3, title: "Modern Kitchen",  tag: "LIFESTYLE" },
-    { id: 4, img: img4, title: "Exterior View",   tag: "ARCHITECTURE" },
-    { id: 5, img: img5, title: "Rooftop Pool",    tag: "AMENITIES" },
+    { id: 1, img: img1, title: "Amphitheatre",     tag: "AMENITIES" },
+    { id: 2, img: img2, title: "Master Bedroom",  tag: "INTERIORS" },
+    { id: 3, img: img3, title: "Creche Area",      tag: "AMENITIES" },
+    { id: 4, img: img4, title: "Dining Hall",     tag: "INTERIORS" },
+    { id: 5, img: img5, title: "Grand Entrance",   tag: "ARCHITECTURE" },
+    { id: 6, img: img6, title: "Entrance Lobby",   tag: "INTERIORS" },
+    { id: 7, img: img7, title: "Fitness Gym",      tag: "AMENITIES" },
+    { id: 8, img: img8, title: "Indoor Games",    tag: "LIFESTYLE" },
+    { id: 9, img: img9, title: "Modern Kitchen",  tag: "INTERIORS" },
+    { id: 10, img: img10, title: "Living & Dining", tag: "INTERIORS" },
+    { id: 11, img: img11, title: "Night Aerial View", tag: "ARCHITECTURE" },
+    { id: 12, img: img12, title: "OSR Greenery",   tag: "LIFESTYLE" },
+    { id: 13, img: img13, title: "Pool Side Night", tag: "AMENITIES" },
+    { id: 14, img: img14, title: "Main Approach",   tag: "ARCHITECTURE" },
+    { id: 15, img: img15, title: "Semi Aerial View", tag: "ARCHITECTURE" },
+    { id: 16, img: img16, title: "Daylight View",   tag: "ARCHITECTURE" },
+    { id: 17, img: img17, title: "Infinity Pool",   tag: "AMENITIES" },
 ];
 
 const Gallery = () => {
@@ -37,17 +61,14 @@ const Gallery = () => {
     }, []);
 
     return (
-        <section className="py-24 lg:py-32 bg-luxury-black overflow-hidden">
+        <section id="gallery" className="section-padding bg-luxury-black overflow-hidden">
             <div className="lux-container">
 
                 {/* Header */}
-                <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14 gap-6 animate-fade-up">
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-8 gap-6 animate-fade-up">
                     <div>
-                        <span className="text-gold uppercase tracking-[0.3em] text-[13px] font-bold mb-4 block">
-                            Photo Gallery
-                        </span>
-                        <h2 className="text-5xl md:text-6xl lg:text-5xl font-heading leading-[1.1] text-white max-w-2xl">
-                            Our <span className="text-gold italic">Gallery</span>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading leading-[1.1] text-white max-w-2xl">
+                            Project <span className="text-gold italic">Gallery</span>
                         </h2>
                     </div>
                     {/* Slide counter */}
@@ -63,7 +84,7 @@ const Gallery = () => {
                 </div>
 
                 {/* Main Slider */}
-                <div className="relative w-full h-[420px] md:h-[540px] overflow-hidden rounded-[4px] mb-6 animate-fade-up animate-delay-1">
+                <div className="relative w-full h-[220px] md:h-[450px] overflow-hidden rounded-[4px] mb-6 animate-fade-up animate-delay-1">
                     {slides.map((slide, idx) => (
                         <div
                             key={slide.id}
@@ -81,15 +102,7 @@ const Gallery = () => {
                             {/* Gradient overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
 
-                            {/* Slide Info */}
-                            <div className="absolute bottom-8 left-8">
-                                <span className="text-gold text-[11px] font-bold tracking-[0.3em] uppercase block mb-2">
-                                    {slide.tag}
-                                </span>
-                                <h3 className="text-white font-heading text-3xl md:text-4xl drop-shadow-lg">
-                                    {slide.title}
-                                </h3>
-                            </div>
+
                         </div>
                     ))}
 
@@ -113,7 +126,7 @@ const Gallery = () => {
                 </div>
 
                 {/* Thumbnail Strip */}
-                <div className="flex gap-3 overflow-x-auto pb-2 animate-fade-up animate-delay-1">
+                <div className="flex gap-3 overflow-x-auto pb-4 hide-scroll animate-fade-up animate-delay-1">
                     {slides.map((slide, idx) => (
                         <button
                             key={slide.id}
@@ -134,7 +147,7 @@ const Gallery = () => {
                 </div>
 
                 {/* Dot Indicators */}
-                <div className="flex items-center justify-center gap-3 mt-8">
+                <div className="flex items-center justify-center gap-3 mt-4">
                     {slides.map((_, idx) => (
                         <button
                             key={idx}

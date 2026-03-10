@@ -5,7 +5,7 @@
   --font-heading: "Gilda Display", serif;
   --font-body: "Gilda Display", serif;
   
-  --color-gold: #be9874;
+  --color-gold: #9b7a44;
   --color-gold-dark: #a67f59;
   --color-luxury-black: #222222;
   --color-luxury-gray: #fffdfb;
@@ -32,6 +32,21 @@ p {
   line-height: 1.8;
 }
 
+/* Hide scrollbar but keep functionality */
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+.hide-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide placeholder on focus */
+input:focus::placeholder, 
+textarea:focus::placeholder {
+  color: transparent;
+}
+
 /* Custom Utilities */
 @layer components {
   .btn-gold {
@@ -42,7 +57,7 @@ p {
 
   .btn-gold::before {
     content: '';
-    @apply absolute inset-0 bg-luxury-black -z-1;
+    @apply absolute inset-0 bg-[#6d6d6d] -z-1;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     transform: scaleX(0);
     transform-origin: right;
@@ -81,7 +96,7 @@ p {
   }
   
   .section-padding {
-    @apply py-24 md:py-32;
+    @apply py-16 md:py-24;
   }
   
   .lux-container {

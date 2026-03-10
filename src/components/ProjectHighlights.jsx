@@ -3,120 +3,95 @@ import React from 'react';
 const ProjectHighlights = () => {
     const amenities = [
         {
-            title: "Outdoor Gym",
+            title: (<>Ultra Luxury<br />Living</>),
             icon: (
                 <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3-3a1 1 0 0 0 0-1.4l-1.6-1.6a1 1 0 0 0-1.4 0l-3 3ZM9.3 14.7a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3-3a1 1 0 0 0 0-1.4l-1.6-1.6a1 1 0 0 0-1.4 0l-3 3ZM10.5 7.5l6 6M4 20l3-3M3 11l3 3m12 3l3 3" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M3 9.75L12 3l9 6.75V21H3V9.75z"/>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9 21V12h6v9"/>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 3l1.5 1.5M12 3l-1.5 1.5"/>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M6 13h2m8 0h2M6 16h2m8 0h2"/>
                 </svg>
             )
         },
         {
-            title: "Basketball Hoop",
+            title: "Panoramic Skyline View",
+            icon: (
+                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M2 20h20"/>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 20V10l4-4 4 4V8l4-4 4 4v12"/>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M10 20v-5h4v5"/>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M2 12a10 10 0 0 1 20 0" opacity="0.4"/>
+                    <circle cx="12" cy="6" r="1.2" strokeWidth="1" fill="currentColor"/>
+                </svg>
+            )
+        },
+        {
+            title: "On Main Road Project",
+            icon: (
+                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M8 21L5 3h14l-3 18H8z"/>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 7v2m0 4v2"/>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M2 21h20"/>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 17c2-1 4-1.5 8-1.5s6 .5 8 1.5"/>
+                </svg>
+            )
+        },
+        {
+            title: "100% Vastu Compliant",
             icon: (
                 <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="9" strokeWidth="1"/>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 3v18M3 12h18M5.5 5.5l13 13M18.5 5.5l-13 13"/>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 3v18M3 12h18"/>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 3l2.5 2.5M12 3l-2.5 2.5M12 21l2.5-2.5M12 21l-2.5-2.5"/>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9 9l6 6m0-6l-6 6" opacity="0.5"/>
+                    <circle cx="12" cy="12" r="2" strokeWidth="1"/>
                 </svg>
             )
         },
-        {
-            title: "Play Court",
-            icon: (
-                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <rect x="3" y="6" width="18" height="12" rx="2" strokeWidth="1"/>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 6v12M3 12h18M9 9a3 3 0 0 0 6 0m-6 6a3 3 0 0 1 6 0"/>
-                </svg>
-            )
-        },
-        {
-            title: "Kids Play Area",
-            icon: (
-                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9 18l3 3 3-3m-3 3V10m0-7a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"/>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M5 13a4 4 0 1 0 8 0 4 4 0 0 0-8 0ZM15 13a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/>
-                </svg>
-            )
-        },
-        {
-            title: "Sand Pit",
-            icon: (
-                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M18 10h-1.26A8 8 0 1 0 9 20h9a4 4 0 0 0 0-8ZM7 15l2 2 4-4"/>
-                </svg>
-            )
-        },
-        {
-            title: "Premium Seating",
-            icon: (
-                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 18v3m16-3v3M3 14h18m-2-4v4m-14-4v4m2-4h10a2 2 0 0 1 2 2v2H5v-2a2 2 0 0 1 2-2Z"/>
-                </svg>
-            )
-        },
-        {
-            title: "Jogging Track",
-            icon: (
-                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 5H19V7H13V5ZM13 9H19V11H13V9ZM13 13H19V15H13V13ZM13 17H19V19H13V17ZM5 5H11V19H5V5Z" />
-                </svg>
-            )
-        },
-        {
-            title: "Zen Garden",
-            icon: (
-                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9Zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7Z" />
-                    <circle cx="12" cy="12" r="3" strokeWidth="1"/>
-                </svg>
-            )
-        }
     ];
 
     return (
-        <section id="highlights" className="py-24 lg:py-32 bg-luxury-gray relative overflow-hidden">
+        <section id="highlights" className="section-padding bg-luxury-gray relative overflow-hidden">
             {/* Background Texture/Pattern */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none select-none">
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#be9874_1px,transparent_1px)] [background-size:40px_40px]"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#9b7a44_1px,transparent_1px)] [background-size:40px_40px]"></div>
             </div>
 
             <div className="lux-container relative z-10">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-12 mb-24 animate-fade-up">
                     <div className="max-w-xl text-center md:text-left">
-                        <span className="text-gold uppercase tracking-[0.4em] text-[12px] font-bold mb-4 block">
-                            LUXURY LIVING
-                        </span>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading text-luxury-black leading-[1.1]">
+
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading text-luxury-black leading-[1.1]">
                             Project <span className="text-gold italic">Highlights</span>
                         </h2>
                     </div>
                     <div>
-                        <button className="btn-gold !shadow-none hover:bg-luxury-black transition-all duration-500 whitespace-nowrap">
-                            Schedule a Site Visit
+                        <button className="relative px-8 py-4 bg-gold text-white font-medium uppercase tracking-[0.2em] text-xs cursor-pointer flex items-center justify-center gap-3 whitespace-nowrap hover:bg-[#6d6d6d] transition-all duration-500">
+                            <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span>Schedule a Site Visit</span>
                         </button>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-16 lg:gap-y-20 gap-x-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 animate-fade-up animate-delay-2">
                     {amenities.map((item, index) => (
                         <div 
                             key={index} 
-                            className="group flex flex-col items-center text-center animate-fade-up animate-delay-1"
+                            className="group bg-[#f8f5f0] rounded-[4px] min-h-[200px] p-6 lg:p-8 flex flex-col items-center justify-center text-center transition-all duration-500 hover:bg-[#9b7a44] hover:-translate-y-2 cursor-pointer shadow-sm animate-fade-up animate-delay-1"
                         >
-                            {/* Icon Wrapper with border and hover effect */}
-                            <div className="relative mb-6 p-6 lg:p-8 rounded-full border border-gold/20 transition-all duration-500 group-hover:-translate-y-3 group-hover:border-gold">
-                                <div className="absolute inset-0 bg-white rounded-full scale-0 group-hover:scale-100 transition-transform duration-500 ease-out shadow-sm -z-1"></div>
-                                <div className="text-gold transition-colors duration-500 group-hover:text-luxury-black">
+                            <div className="flex flex-col items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
+                                {/* Icon matching Amenities style */}
+                                <div className="text-gold group-hover:text-white transition-colors duration-500 mb-6">
                                     {item.icon}
                                 </div>
-                            </div>
 
-                            {/* Heading */}
-                            <h3 className="text-lg lg:text-xl font-heading text-luxury-black tracking-wide group-hover:text-gold transition-colors duration-300 px-4">
-                                {item.title}
-                            </h3>
-                            
-                            {/* Subtle line accent */}
-                            <div className="w-0 h-[2px] bg-gold mt-4 group-hover:w-12 transition-all duration-500 origin-center"></div>
+                                {/* Heading matching Amenities style */}
+                                <h4 className="text-[17px] lg:text-[19px] font-heading font-normal text-luxury-black group-hover:text-white transition-colors duration-500 tracking-wide px-2 leading-tight">
+                                    {item.title}
+                                </h4>
+                            </div>
                         </div>
                     ))}
                 </div>
