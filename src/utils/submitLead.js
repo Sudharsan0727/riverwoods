@@ -40,10 +40,11 @@ export const submitLead = (formData) => {
   });
 
   // 2. Email Notification (New Feature)
-  const emailPromise = fetch("/radianceeternity/mail.php", {
+  const emailPromise = fetch("/mail.php", {
     method: 'POST',
     keepalive: true,
     headers: { 'Content-Type': 'application/json' },
+
 
     body: JSON.stringify({
       fullName,
