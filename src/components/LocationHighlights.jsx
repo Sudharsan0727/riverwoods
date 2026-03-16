@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import PhoneInputField from './PhoneInputField';
+import EnquiryModal from './EnquiryModal';
 
 // Using the generated premium images
 import schoolImg from '../assets/img/School.jpg';
-import collegeImg from '../assets/location_college_1773055419337.png';
-import hospitalImg from '../assets/location_hospital_1773055436418.png';
+import collegeImg from '../assets/img/college.jpg';
+import hospitalImg from '../assets/img/Hospital.jpg';
 
 const LocationHighlights = () => {
     const locations = [
@@ -26,7 +29,7 @@ const LocationHighlights = () => {
         },
         {
             id: 2,
-            title: "College",
+            title: "Colleges",
             img: collegeImg,
             tag: "UNIVERSITY",
             places: [
@@ -43,7 +46,7 @@ const LocationHighlights = () => {
         },
         {
             id: 3,
-            title: "Hospital",
+            title: "Hospitals",
             img: hospitalImg,
             tag: "HEALTHCARE",
             places: [
@@ -62,6 +65,8 @@ const LocationHighlights = () => {
     ];
 
     const [activeId, setActiveId] = useState(1);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const navigate = useNavigate();
 
     return (
         <section className="section-padding bg-[#f8f5f0] overflow-hidden">
@@ -152,7 +157,7 @@ const LocationHighlights = () => {
 
                 {/* Footer Action Row */}
                 <div className="mt-16 flex flex-col md:flex-row items-center justify-center gap-8 animate-fade-up">
-                    <button className="relative px-8 py-4 bg-gold text-white font-medium uppercase tracking-[0.2em] text-xs cursor-pointer flex items-center justify-center gap-3 whitespace-nowrap hover:bg-[#6d6d6d] transition-all duration-500">
+                    <button onClick={() => setIsModalOpen(true)} className="btn-gold !flex items-center justify-center gap-3 whitespace-nowrap w-full md:w-auto">
                         <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                             <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -161,6 +166,9 @@ const LocationHighlights = () => {
                     </button>
                 </div>
             </div>
+
+            {/* Popup Form Modal */}
+            <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </section>
     );
 };

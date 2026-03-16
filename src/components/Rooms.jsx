@@ -1,4 +1,7 @@
 import React, { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import PhoneInputField from './PhoneInputField';
+import EnquiryModal from './EnquiryModal';
 import floorPlan1 from '../assets/img/Floor_plan/2BHK +2T.png';
 import floorPlan2 from '../assets/img/Floor_plan/3BHK + 3T.png';
 import floorPlan3 from '../assets/img/Floor_plan/4BHK + 4T.png';
@@ -11,7 +14,7 @@ const roomsData = [
         img: floorPlan1,
         price: "₹ 85 L",
         beds: "2 Bed",
-        area: "2 BHK + 2T",
+        area: "1356 Sq.ft.",
         extraInfo: "2 Bathroom",
         extraIcon: (
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -21,12 +24,12 @@ const roomsData = [
     },
     {
         id: 2,
-        title: "3 BHK + 3T",
-        img: floorPlan2,
-        price: "₹ 1.35 Cr",
+        title: "3BHK + 2T",
+        img: floorPlan2, // Using existing 3BHK image
+        price: "₹ 1.25 Cr",
         beds: "3 Bed",
-        area: "3 BHK + 3T",
-        extraInfo: "3 Bathroom",
+        area: "1714 Sq.ft.",
+        extraInfo: "2 Bathroom",
         extraIcon: (
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -35,12 +38,12 @@ const roomsData = [
     },
     {
         id: 3,
-        title: "4 BHK + 4T",
-        img: floorPlan3,
-        price: "₹ 2.15 Cr",
-        beds: "4 Bed",
-        area: "4 BHK + 4T",
-        extraInfo: "4 Bathroom",
+        title: "3BHK + 3T",
+        img: floorPlan2,
+        price: "₹ 1.35 Cr",
+        beds: "3 Bed",
+        area: "1919 Sq.ft.",
+        extraInfo: "3 Bathroom",
         extraIcon: (
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -49,12 +52,12 @@ const roomsData = [
     },
     {
         id: 4,
-        title: "5 BHK + 5T",
-        img: floorPlan4,
-        price: "₹ 3.50 Cr",
-        beds: "5 Bed",
-        area: "5 BHK + 5T",
-        extraInfo: "5 Bathroom",
+        title: "4BHK + 4T",
+        img: floorPlan3,
+        price: "₹ 2.15 Cr",
+        beds: "4 Bed",
+        area: "2618 Sq.ft.",
+        extraInfo: "4 Bathroom",
         extraIcon: (
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -129,7 +132,8 @@ const RoomCard = ({ title, img, beds, area, extraInfo, extraIcon, price, onOpenP
 
 const Rooms = () => {
     const sliderRef = useRef(null);
-    const [selectedImage, setSelectedImage] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const navigate = useNavigate();
 
     const scrollPrev = () => {
         if (sliderRef.current) {
@@ -165,7 +169,7 @@ const Rooms = () => {
                     {/* Right Content & Controls */}
                     <div className="flex gap-8 lg:gap-16 items-center flex-1 justify-start lg:justify-end animate-fade-up animate-delay-1">
                         <p className="text-luxury-text text-lg leading-relaxed max-w-lg hidden lg:block">
-                            Explore thoughtfully designed floor plans that blend space, comfort, and functionality — crafted to suit modern lifestyles across spacious 2, 3, 4, and 5 BHK homes.
+                            Explore thoughtfully designed floor plans that blend space, comfort, and functionality — crafted to suit modern lifestyles across spacious 2, 3, and 4 BHK homes.
                         </p>
                         
                         {/* Circle Navigation Arrows */}
@@ -197,41 +201,14 @@ const Rooms = () => {
                 >
                     {roomsData.map((room) => (
                         <div key={room.id} className="snap-start shrink-0 w-full lg:w-[calc(50%-12px)]">
-                            <RoomCard {...room} onOpenPopup={() => setSelectedImage(room.img)} />
+                            <RoomCard {...room} onOpenPopup={() => setIsModalOpen(true)} />
                         </div>
                     ))}
                 </div>
             </div>
 
-            {/* Full Screen Image Popup Modal */}
-            {selectedImage && (
-                <div 
-                    className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md animate-modal-overlay"
-                    onClick={() => setSelectedImage(null)}
-                >
-                    {/* Close Button */}
-                    <button 
-                        onClick={() => setSelectedImage(null)}
-                        className="absolute top-6 right-6 lg:top-10 lg:right-10 text-white/70 hover:text-white transition-colors z-50"
-                    >
-                        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                    
-                    {/* Image Container */}
-                    <div 
-                        className="relative max-w-6xl w-full mx-4 p-2 animate-modal-content" 
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <img 
-                            src={selectedImage} 
-                            alt="Floor Plan Full View" 
-                            className="w-full h-auto max-h-[85vh] object-contain rounded-sm shadow-2xl" 
-                        />
-                    </div>
-                </div>
-            )}
+            {/* Popup Form Modal */}
+            <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </section>
     );
 };

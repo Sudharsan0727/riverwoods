@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import PhoneInputField from './PhoneInputField';
+import EnquiryModal from './EnquiryModal';
 import about1 from '../assets/img/about1.jpg';
 import about2 from '../assets/img/about2.jpg';
 
 const AboutUs = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const navigate = useNavigate();
+
     return (
         <section id="about" className="section-padding bg-white overflow-hidden">
             <div className="lux-container">
@@ -30,7 +36,7 @@ const AboutUs = () => {
                                 <span className="text-gold mt-1 shrink-0">
                                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
                                 </span>
-                                <p className="text-[17px] text-black font-medium"><span className="font-bold text-luxury-black">Type:</span> 2, 3, 4 &amp; 5 BHK Apartments</p>
+                                <p className="text-[17px] text-black font-medium"><span className="font-bold text-luxury-black">Type:</span> 2, 3 &amp; 4 BHK Apartments</p>
                             </div>
                             <div className="flex items-start gap-4">
                                 <span className="text-gold mt-1 shrink-0">
@@ -48,14 +54,14 @@ const AboutUs = () => {
 
                         {/* Action Row */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-                            <button className="relative px-8 py-4 bg-gold text-white font-medium uppercase tracking-[0.2em] text-xs cursor-pointer flex items-center justify-center gap-3 w-full whitespace-nowrap hover:bg-[#6d6d6d] transition-all duration-500 group">
+                            <button onClick={() => setIsModalOpen(true)} className="btn-gold !flex items-center justify-center gap-3 w-full whitespace-nowrap group">
                                 <svg className="w-4 h-4 shrink-0 relative z-10" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v13m0 0l-4-4m4 4l4-4M3 20h18" />
                                 </svg>
                                 <span className="relative z-10">Download Brochure</span>
                             </button>
                             
-                            <a href="tel:+916374463248" className="bg-[#6d6d6d] text-white px-8 py-4 uppercase tracking-[0.2em] text-xs font-bold hover:bg-gold transition-all duration-300 flex items-center justify-center gap-2 w-full whitespace-nowrap">
+                            <a href="tel:+917418066657" className="bg-[#6d6d6d] text-white px-8 py-4 uppercase tracking-[0.2em] text-xs font-bold hover:bg-gold transition-all duration-300 flex items-center justify-center gap-2 w-full whitespace-nowrap">
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                 </svg>
@@ -65,7 +71,7 @@ const AboutUs = () => {
                     </div>
 
                     {/* Right Images Column */}
-                    <div className="flex gap-4 md:gap-8 animate-fade-up h-[300px] md:h-[400px] lg:h-[500px] items-center">
+                    <div className="hidden lg:flex gap-4 md:gap-8 animate-fade-up h-[300px] md:h-[400px] lg:h-[500px] items-center">
                         {/* First Image - Floating Up/Down */}
                         <div className="flex-1 h-[90%] md:h-[80%] overflow-hidden rounded-2xl shadow-lg mt-12 bg-luxury-gray animate-float">
                             <img 
@@ -87,6 +93,9 @@ const AboutUs = () => {
 
                 </div>
             </div>
+
+            {/* Popup Form Modal */}
+            <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </section>
     );
 };

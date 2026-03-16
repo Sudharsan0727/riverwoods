@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
+import img_banner from '../assets/img/RADIANCE_banner.jpeg';
 import img1 from '../assets/img/Gallery/Amphitheatre Cam.jpg';
 import img2 from '../assets/img/Gallery/Bedroom Cam.jpg';
 import img3 from '../assets/img/Gallery/Creche Cam.jpg';
@@ -19,6 +20,7 @@ import img16 from '../assets/img/Gallery/Semi Aerial Day.jpg';
 import img17 from '../assets/img/Gallery/Swmming pool View_01a.jpg';
 
 const slides = [
+    { id: 0, img: img_banner, title: "Radiance Eternity", tag: "EXTERIOR" },
     { id: 1, img: img1, title: "Amphitheatre",     tag: "AMENITIES" },
     { id: 2, img: img2, title: "Master Bedroom",  tag: "INTERIORS" },
     { id: 3, img: img3, title: "Creche Area",      tag: "AMENITIES" },

@@ -1,31 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import PhoneInputField from './PhoneInputField';
+import EnquiryModal from './EnquiryModal';
 
 const AmenitiesIconGrid = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const navigate = useNavigate();
     // 6 Premium amenities mirroring the structure
     const allAmenities = [
         {
-            title: "Outdoor gym",
-            description: "Stay fit with our state-of-the-art open-air fitness equipment.",
-        },
-        {
-            title: "Mini-half basket ball hoop",
-            description: "Perfect your game or enjoy a casual shootaround.",
-        },
-        {
             title: "Multi-purpose gathering zone",
             description: "A versatile space for community events and social interactions.",
-        },
-        {
-            title: "Multi-purpose play court",
-            description: "Designed for various sports activities and active living.",
         },
         {
             title: "Kids play area",
             description: "A safe and fun environment for children to explore and play.",
         },
         {
-            title: "Sand pit",
-            description: "A dedicated creative play space where young imaginations run free.",
+            title: "Co-working space",
+            description: "A productive and inspiring environment to work from home effectively.",
+        },
+        {
+            title: "Swimming pool",
+            description: "Relax, refresh, and unwind in our luxurious temperature-controlled pool.",
+        },
+        {
+            title: "gymnasium",
+            description: "Stay fit with our state-of-the-art fitness equipment.",
+        },
+        {
+            title: "Multi-purpose play court",
+            description: "Designed for various sports activities and active living.",
         }
     ];
 
@@ -34,7 +39,7 @@ const AmenitiesIconGrid = () => {
             <div className="lux-container max-w-[1300px] relative z-10">
                 
                 {/* Asymmetric Split Layout */}
-                <div className="flex flex-col lg:flex-row lg:items-center gap-16 lg:gap-24">
+                <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-24">
                     
                     {/* Left Column: Info & Button */}
                     <div className="w-full lg:w-[35%] animate-fade-up">
@@ -44,11 +49,11 @@ const AmenitiesIconGrid = () => {
                             AMENITIES
                         </h2>
                         
-                        <p className="text-xl text-luxury-text leading-relaxed mb-10 max-w-sm">
+                        <p className="text-xl text-luxury-text leading-relaxed mb-6 lg:mb-10 max-w-sm">
                             Discover a world of thoughtfully curated amenities designed to bring comfort, convenience, and luxury to your modern lifestyle.
                         </p>
                         
-                        <button className="relative px-8 py-4 bg-gold text-white font-medium uppercase tracking-[0.2em] text-xs cursor-pointer flex items-center justify-center gap-3 whitespace-nowrap hover:bg-[#6d6d6d] transition-all duration-500">
+                        <button onClick={() => setIsModalOpen(true)} className="btn-gold hidden lg:flex items-center justify-center gap-3 whitespace-nowrap">
                             <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -80,10 +85,24 @@ const AmenitiesIconGrid = () => {
                                 </div>
                             ))}
                         </div>
+
+                        {/* Mobile View Button - Visible only on mobile, below the 6 boxes */}
+                        <div className="mt-10 lg:hidden flex justify-center animate-fade-up">
+                            <button onClick={() => setIsModalOpen(true)} className="btn-gold !flex items-center justify-center gap-3 whitespace-nowrap w-full">
+                                <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                                <span>View Amenities</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
             </div>
+
+            {/* Popup Form Modal */}
+            <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </section>
     );
 };

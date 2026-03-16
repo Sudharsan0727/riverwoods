@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PhoneInputField from './PhoneInputField';
+import EnquiryModal from './EnquiryModal';
 
 const PricingTable = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [phone, setPhone] = useState('');
+    const navigate = useNavigate();
 
     const pricingData = [
         {
@@ -83,63 +85,7 @@ const PricingTable = () => {
             </div>
 
             {/* Popup Form Modal */}
-            {isModalOpen && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm animate-modal-overlay">
-                    <div className="bg-white max-w-md w-full mx-4 rounded-xl shadow-2xl relative animate-modal-content">
-                        {/* Close Button */}
-                        <button 
-                            onClick={() => setIsModalOpen(false)}
-                            className="absolute top-4 right-4 text-gray-400 hover:text-luxury-black transition-colors"
-                        >
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                        
-                        <div className="p-8">
-                            <div className="text-center mb-6">
-                                <h3 className="text-2xl font-heading text-luxury-black mb-2">Request Details</h3>
-                                <p className="text-luxury-text text-sm">Please fill out this form to instantly receive the pricing details and brochure.</p>
-                            </div>
-                            
-                            <form className="space-y-4" onSubmit={(e) => {
-                                e.preventDefault();
-                                // Handle form submit action here
-                                alert("Thank you! Our team will contact you shortly.");
-                                setIsModalOpen(false);
-                            }}>
-                                <div>
-                                    <input 
-                                        type="text" 
-                                        placeholder="Full Name *" 
-                                        required
-                                        className="w-full px-4 py-3 border border-gray-200 rounded outline-none focus:border-gold transition-colors text-sm"
-                                    />
-                                </div>
-                                <div>
-                                    <PhoneInputField theme="modal" value={phone} onChange={setPhone} />
-                                </div>
-                                <div>
-                                    <input 
-                                        type="email" 
-                                        placeholder="Email Address *" 
-                                        required
-                                        className="w-full px-4 py-3 border border-gray-200 rounded outline-none focus:border-gold transition-colors text-sm"
-                                    />
-                                </div>
-                                
-                                <button type="submit" className="w-full mt-4 bg-[#6d6d6d] text-white hover:bg-gold transition-colors duration-300 py-3 rounded font-bold uppercase tracking-widest text-xs">
-                                    Submit
-                                </button>
-                                
-                                <p className="text-center text-[10px] text-gray-400 mt-4">
-                                    Your information is secure. We will only contact you regarding your inquiry.
-                                </p>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            )}
+            <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </section>
     );
 };

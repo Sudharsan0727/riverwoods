@@ -1,55 +1,109 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PhoneInputField from './PhoneInputField';
-const heroBg = "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop";
+import heroBg from '../assets/img/RADIANCE_banner.jpeg';
+import heroMobileBg from '../assets/img/Mobile-banner.jpeg';
+import { submitLead } from '../utils/submitLead';
+
+import SuccessModal from './SuccessModal';
 
 const Hero = () => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: ''
+  });
   const [phone, setPhone] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const navigate = useNavigate();
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        
+        // Start submission in the background (no-wait for snappy UI)
+        submitLead({
+            ...formData,
+            mobile: phone
+        });
+
+        // Show success and move forward immediately for a snappy feel
+        setIsSubmitting(false);
+        setShowSuccess(true);
+        setTimeout(() => {
+            navigate('/thank-you');
+        }, 1500);
+    };
+
+
+
 
   return (
-    <section id="home" className="relative min-h-[75vh] pt-32 md:pt-40 pb-16 flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+    <section id="home" className="relative flex flex-col lg:block lg:min-h-[90vh] pt-[72px] lg:pt-0 overflow-hidden bg-[#f8f5f0] lg:bg-white">
+      {/* Background Image - Desktop */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[20s] scale-110 animate-[zoom_20s_infinite_alternate] z-0"
+        className="hidden lg:block lg:absolute lg:inset-0 lg:h-full bg-cover bg-center bg-no-repeat z-0"
         style={{ backgroundImage: `url(${heroBg})` }}
-      >
-        <div className="absolute inset-0 bg-black/40"></div>
+      ></div>
+
+      {/* Banner Image - Mobile (Full Width View) */}
+      <div className="lg:hidden w-full relative z-0 mt-0 overflow-hidden shadow-sm">
+        <img 
+          src={heroMobileBg} 
+          alt="Radiance Eternity Banner" 
+          className="w-full h-auto block"
+        />
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 lux-container w-full">
+      <div className="relative z-10 lux-container w-full py-6 lg:py-0 lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:left-0 lg:right-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Side: Title and Buttons */}
-          <div className="hidden lg:col-span-7 text-left text-white">
-            <span className="section-title-sub text-white/80 mb-6 animate-fade-up block">Premium Construction & Design</span>
-            <h1 className="text-3xl md:text-6xl lg:text-7xl font-heading mb-10 leading-[1.1] animate-fade-up animate-delay-1">
-              Building Your <br /> <span className="text-gold italic">Vision</span>
-            </h1>
-            <div className="flex flex-col md:flex-row items-start gap-6 animate-fade-up animate-delay-3">
-              <button className="btn-gold">View Projects</button>
-              <button className="px-8 py-4 bg-white text-luxury-black font-medium hover:bg-gold hover:text-white transition-all duration-500 uppercase tracking-widest text-xs">
-                Our Services
-              </button>
-            </div>
-          </div>
-
-          <div className="lg:col-span-5 lg:col-start-8 mt-4 lg:mt-8">
-            <div className="bg-white/10 backdrop-blur-[40px] border border-white/20 p-6 md:p-8 rounded-sm relative z-10 shadow-2xl">
-              <h3 className="text-2xl font-heading text-white mb-6 text-center italic">Enquiry Now</h3>
-              <form className="space-y-4">
+          {/* Form Side: Below image on mobile */}
+          <div className="lg:col-span-5 lg:col-start-8">
+            <div className="bg-white p-6 md:p-8 rounded-sm relative z-10 shadow-xl lg:shadow-2xl border border-gray-100 lg:border-none mx-auto max-w-lg lg:max-w-none">
+              <h3 className="text-2xl font-heading text-luxury-black mb-6 text-center italic">Enquiry Now</h3>
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
-                  <label className="text-[10px] uppercase tracking-[0.2em] text-white/60 mb-2 block">Full Name *</label>
-                  <input type="text" required placeholder="Your Name" className="w-full bg-white/5 border border-white/20 px-4 py-2 text-white placeholder:text-white/80 text-sm focus:outline-none focus:border-gold transition-colors" />
+                  <label className="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 block">Full Name *</label>
+                  <input 
+                    type="text" 
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleInputChange}
+                    required 
+                    placeholder="Your Name" 
+                    className="w-full bg-gray-50 border border-gray-200 px-4 py-2 text-luxury-black placeholder:text-gray-400 text-sm focus:outline-none focus:border-gold transition-colors" 
+                  />
                 </div>
                 <div>
-                  <label className="text-[10px] uppercase tracking-[0.2em] text-white/60 mb-2 block">Phone Number *</label>
-                  <PhoneInputField theme="dark" value={phone} onChange={setPhone} />
+                  <label className="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 block">Phone Number *</label>
+                  <PhoneInputField theme="light" value={phone} onChange={setPhone} required />
                 </div>
                 <div>
-                  <label className="text-[10px] uppercase tracking-[0.2em] text-white/60 mb-2 block">Email Address *</label>
-                  <input type="email" required placeholder="email@example.com" className="w-full bg-white/5 border border-white/20 px-4 py-2 text-white placeholder:text-white/80 text-sm focus:outline-none focus:border-gold transition-colors" />
+                  <label className="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 block">Email Address *</label>
+                  <input 
+                    type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required 
+                    placeholder="email@example.com" 
+                    className="w-full bg-gray-50 border border-gray-200 px-4 py-2 text-luxury-black placeholder:text-gray-400 text-sm focus:outline-none focus:border-gold transition-colors" 
+                  />
                 </div>
-                <button type="submit" className="w-full btn-gold !py-3 shadow-xl mt-2">Submit</button>
-                <p className="text-[10px] !text-white opacity-100 font-medium text-center mt-3 leading-tight">
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className={`w-full btn-gold !py-3 shadow-xl mt-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                >
+                  {isSubmitting ? 'Submitting...' : 'Submit'}
+                </button>
+                <p className="text-[10px] text-gray-500 opacity-100 font-medium text-center mt-3 leading-tight">
                   Your information is secure. We will only contact you regarding your inquiry.
                 </p>
               </form>
@@ -57,23 +111,15 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-      {/* Down Arrow */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
-        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-      </div>
-
-      <style dangerouslySetInnerHTML={{
-        __html: `
-        @keyframes zoom {
-          from { transform: scale(1); }
-          to { transform: scale(1.1); }
-        }
-      `}} />
+      <SuccessModal 
+        isOpen={showSuccess} 
+        onClose={() => setShowSuccess(false)} 
+        message="Lead submitted successfully" 
+      />
     </section>
   );
 };
 
+
 export default Hero;
+

@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
@@ -11,8 +12,9 @@ import Testimonials from './components/Testimonials';
 import EnquirySection from './components/EnquirySection';
 import PricingTable from './components/PricingTable';
 import Footer from './components/Footer';
+import ThankYou from './components/ThankYou';
 
-function App() {
+const HomePage = () => {
   useEffect(() => {
     // Intersection Observer for scroll animations
     const observer = new IntersectionObserver((entries) => {
@@ -30,7 +32,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
       <Navbar />
       <main>
         <Hero />
@@ -45,7 +47,20 @@ function App() {
         <EnquirySection />
       </main>
       <Footer />
-    </div>
+    </>
+  );
+};
+
+function App() {
+  return (
+    <Router basename="/radianceeternity">
+      <div className="min-h-screen bg-white">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/thank-you" element={<ThankYou />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

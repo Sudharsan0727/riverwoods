@@ -2,7 +2,7 @@ import React from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
-const PhoneInputField = ({ value, onChange, theme = 'dark' }) => {
+const PhoneInputField = ({ value, onChange, theme = 'dark', placeholder = "Phone Number *" }) => {
     const isDark = theme === 'dark';
     const isModal = theme === 'modal';
 
@@ -31,16 +31,20 @@ const PhoneInputField = ({ value, onChange, theme = 'dark' }) => {
             `}</style>
             <PhoneInput
                 country={'in'}
+                preferredCountries={['in']}
                 value={value}
                 onChange={onChange}
                 enableSearch={true}
-                placeholder="Phone Number *"
+                placeholder={placeholder}
+                inputProps={{
+                    required: true,
+                }}
                 inputClass={`!w-full !text-sm !transition-colors focus:!outline-none focus:!border-[#9b7a44] focus:!shadow-none ${
                     isModal ? '!rounded !border-gray-200 !bg-white !text-[#222222] !h-[46px] placeholder:!text-[#9ca3af]' : '!rounded-none'
                 } ${
                     isDark && !isModal
                         ? '!bg-white/5 !border-white/20 !text-white !h-[38px] placeholder:!text-white/80'
-                        : !isModal ? '!bg-white !border-[#fffdfb] !text-[#222222] !h-[46px] placeholder:!text-[#666666]/40' : ''
+                        : !isModal ? '!bg-gray-50 !border-gray-200 !text-[#222222] !h-[38px] placeholder:!text-gray-400' : ''
                 }`}
                 buttonClass={`!border-r-0 !bg-transparent ${isModal ? '!rounded-l !border-gray-200 hover:!bg-gray-50' : '!rounded-none'} ${
                     isDark && !isModal
