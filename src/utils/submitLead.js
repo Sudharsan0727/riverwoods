@@ -12,45 +12,66 @@ export const submitLead = (formData) => {
   const firstName = nameParts[0] || '';
   const lastName = nameParts.slice(1).join(' ') || '.';
 
-  // 1. Salesforce Web-to-Lead
-  const salesforceParams = {
-    firstName: firstName,
-    lastName: lastName,
-    first_name: firstName, 
-    last_name: lastName,   
-    mobile: mobile,
-    phone: mobile,         
-    email: email,
+  // Get UTM parameters from URL for Salesforce
+  const urlParams = new URLSearchParams(window.location.search);
+
+  // 1. Salesforce Apex REST API (Matching Document Version 3.1)
+  const salesforceData = {
+    firstName,
+    lastName,
+    mobile,
+    email,
+    source: urlParams.get('utm_source') || "Web",
     project: "Radiance Eternity",
-    source: "Google",
-    subSource: "Google_LP_RE",
-    medium: "Google_LP_RE",
+    subSource: urlParams.get('utm_medium') || "Google_LP_RE",
+    medium: urlParams.get('utm_medium') || "Google_LP_RE",
     propertyType: "Apartment",
     city: "Chennai",
     location: "Chennai",
+    // All UTM Parameters as per document
+    utm_source: urlParams.get('utm_source') || "",
+    utm_medium: urlParams.get('utm_medium') || "",
+    utm_campaign: urlParams.get('utm_campaign') || "",
+    utm_campaignid: urlParams.get('utm_campaignid') || "",
+    utm_adgroup: urlParams.get('utm_adgroup') || "",
+    utm_adgroupid: urlParams.get('utm_adgroupid') || "",
+    utm_content: urlParams.get('utm_content') || "",
+    utm_device: urlParams.get('utm_device') || "",
+    utm_gclid: urlParams.get('utm_gclid') || "",
+    utm_keyword: urlParams.get('utm_keyword') || "",
+    utm_loc_interest: urlParams.get('utm_loc_interest') || "",
+    utm_loc_physical: urlParams.get('utm_loc_physical') || "",
+    utm_matchtype: urlParams.get('utm_matchtype') || "",
+    utm_network: urlParams.get('utm_network') || "",
+    utm_placement: urlParams.get('utm_placement') || "",
   };
 
-  const salesforceBody = new URLSearchParams(salesforceParams).toString();
-  const salesforceUrl = "https://radiancerealty.my.salesforce-sites.com/ld/webToLead";
+  const salesforceUrl = "https://radiancerealty--partial.sandbox.my.salesforce-sites.com/extrenalsource/services/apexrest/createLead";
 
-  const salesforcePromise = fetch(salesforceUrl, {
+  // Trigger Salesforce (Background)
+  fetch(salesforceUrl, {
     method: 'POST',
-    mode: 'no-cors',
     keepalive: true,
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: salesforceBody
-  });
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(salesforceData)
+  }).catch(err => console.error("Salesforce API Error:", err));
 
-  // 2. Email Notification (Using Node.js Express Server)
-  // Ensure your server.js is running on the live server
-  const emailPromise = axios.post('http://localhost:5000/send-email', {
-      fullName,
-      email,
-      mobile,
-      project: "Radiance Eternity"
-  }).catch(err => console.error("Node.js Email Error:", err));
+  // Trigger Email API (Using fetch with keepalive to ensure it finishes)
+  fetch('https://radiancedevelopers.com/api/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+          fullName,
+          email,
+          mobile,
+          project: "Radiance Eternity"
+      }),
+      keepalive: true
+  }).catch(err => console.error("Email Error:", err));
 
-
-  return Promise.allSettled([salesforcePromise, emailPromise]);
+  // RETURN IMMEDIATELY so the user doesn't wait
+  return Promise.resolve(true); 
 };
+
+
 

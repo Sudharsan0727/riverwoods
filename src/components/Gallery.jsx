@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 
-import img_banner from '../assets/img/RADIANCE_banner.jpeg';
 import img1 from '../assets/img/Gallery/Amphitheatre Cam.jpg';
 import img2 from '../assets/img/Gallery/Bedroom Cam.jpg';
 import img3 from '../assets/img/Gallery/Creche Cam.jpg';
@@ -20,29 +19,56 @@ import img16 from '../assets/img/Gallery/Semi Aerial Day.jpg';
 import img17 from '../assets/img/Gallery/Swmming pool View_01a.jpg';
 
 const slides = [
-    { id: 0, img: img_banner, title: "Radiance Eternity", tag: "EXTERIOR" },
-    { id: 1, img: img1, title: "Amphitheatre",     tag: "AMENITIES" },
-    { id: 2, img: img2, title: "Master Bedroom",  tag: "INTERIORS" },
-    { id: 3, img: img3, title: "Creche Area",      tag: "AMENITIES" },
-    { id: 4, img: img4, title: "Dining Hall",     tag: "INTERIORS" },
-    { id: 5, img: img5, title: "Grand Entrance",   tag: "ARCHITECTURE" },
-    { id: 6, img: img6, title: "Entrance Lobby",   tag: "INTERIORS" },
-    { id: 7, img: img7, title: "Fitness Gym",      tag: "AMENITIES" },
-    { id: 8, img: img8, title: "Indoor Games",    tag: "LIFESTYLE" },
-    { id: 9, img: img9, title: "Modern Kitchen",  tag: "INTERIORS" },
-    { id: 10, img: img10, title: "Living & Dining", tag: "INTERIORS" },
-    { id: 11, img: img11, title: "Night Aerial View", tag: "ARCHITECTURE" },
-    { id: 12, img: img12, title: "OSR Greenery",   tag: "LIFESTYLE" },
-    { id: 13, img: img13, title: "Pool Side Night", tag: "AMENITIES" },
+    // 1. BUILDING ELEVATION
     { id: 14, img: img14, title: "Main Approach",   tag: "ARCHITECTURE" },
+    { id: 16, img: img16, title: "Building Elevation", tag: "ARCHITECTURE" },
+    { id: 5,  img: img5,  title: "Grand Entrance",   tag: "ARCHITECTURE" },
+    { id: 11, img: img11, title: "Night Aerial View", tag: "ARCHITECTURE" },
     { id: 15, img: img15, title: "Semi Aerial View", tag: "ARCHITECTURE" },
-    { id: 16, img: img16, title: "Daylight View",   tag: "ARCHITECTURE" },
+
+    // 2. PROJECT INTERIORS
+    { id: 6,  img: img6,  title: "Entrance Lobby",   tag: "INTERIORS" },
+    { id: 10, img: img10, title: "Living & Dining", tag: "INTERIORS" },
+    { id: 2,  img: img2,  title: "Master Bedroom",  tag: "INTERIORS" },
+    { id: 4,  img: img4,  title: "Dining Hall",     tag: "INTERIORS" },
+    { id: 9,  img: img9,  title: "Modern Kitchen",  tag: "INTERIORS" },
+
+    // 3. AMENITIES
     { id: 17, img: img17, title: "Infinity Pool",   tag: "AMENITIES" },
+    { id: 13, img: img13, title: "Pool Side Night", tag: "AMENITIES" },
+    { id: 1,  img: img1,  title: "Amphitheatre",     tag: "AMENITIES" },
+    { id: 7,  img: img7,  title: "Fitness Gym",      tag: "AMENITIES" },
+    { id: 3,  img: img3,  title: "Creche Area",      tag: "AMENITIES" },
+    { id: 8,  img: img8,  title: "Indoor Games",    tag: "LIFESTYLE" },
+    { id: 12, img: img12, title: "OSR Greenery",   tag: "LIFESTYLE" },
 ];
 
 const Gallery = () => {
     const [current, setCurrent] = useState(0);
     const [animating, setAnimating] = useState(false);
+    const thumbRef = useRef(null);
+    const isInitialMount = useRef(true);
+
+    // Sync thumbnail scroll (Safer way that doesn't jump the whole page)
+    useEffect(() => {
+        if (isInitialMount.current) {
+            isInitialMount.current = false;
+            return;
+        }
+
+        if (thumbRef.current) {
+            const container = thumbRef.current;
+            const activeThumb = container.children[current];
+            
+            if (activeThumb) {
+                const scrollLeft = activeThumb.offsetLeft - (container.offsetWidth / 2) + (activeThumb.offsetWidth / 2);
+                container.scrollTo({
+                    left: scrollLeft,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }, [current]);
 
     const goTo = useCallback((index) => {
         if (animating) return;
@@ -128,7 +154,10 @@ const Gallery = () => {
                 </div>
 
                 {/* Thumbnail Strip */}
-                <div className="flex gap-3 overflow-x-auto pb-4 hide-scroll animate-fade-up animate-delay-1">
+                <div 
+                    ref={thumbRef}
+                    className="flex gap-3 overflow-x-auto pb-4 hide-scroll animate-fade-up animate-delay-1"
+                >
                     {slides.map((slide, idx) => (
                         <button
                             key={slide.id}

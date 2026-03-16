@@ -63,10 +63,24 @@ const roomsData = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
         )
+    },
+    {
+        id: 5,
+        title: "5BHK + 5T",
+        img: floorPlan4,
+        price: "₹ 3.45 Cr",
+        beds: "5 Bed",
+        area: "3485 Sq.ft.",
+        extraInfo: "5 Bathroom",
+        extraIcon: (
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+        )
     }
 ];
 
-const RoomCard = ({ title, img, beds, area, extraInfo, extraIcon, price, onOpenPopup }) => (
+const RoomCard = ({ title, img, beds, area, extraInfo, extraIcon, price, onOpenPopup, onViewImage }) => (
     <div className="group relative h-[320px] lg:h-[450px] overflow-hidden rounded-[4px] cursor-pointer block-select-none">
         {/* Background Image */}
         <img 
@@ -78,17 +92,28 @@ const RoomCard = ({ title, img, beds, area, extraInfo, extraIcon, price, onOpenP
         {/* Dark Gradient Overlay for Text Readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#151515] via-black/40 to-black/20 opacity-90 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none"></div>
 
-        {/* Centered Button (Always Visible) */}
-        <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+        {/* Centered Buttons (Always Visible) */}
+        <div className="absolute inset-0 flex flex-col sm:flex-row items-center justify-center gap-4 z-10 pointer-events-none p-4">
             <button 
                 onClick={onOpenPopup} 
-                className="bg-gold text-white px-8 py-3.5 rounded-full uppercase tracking-widest text-xs font-bold pointer-events-auto hover:bg-white hover:text-luxury-black transition-colors shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex items-center gap-2"
+                className="bg-gold text-white px-7 py-3 rounded-full uppercase tracking-[0.2em] text-[10px] font-bold pointer-events-auto hover:bg-white hover:text-luxury-black transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex items-center gap-2 w-full sm:w-auto justify-center group/btn"
             >
-                <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0zm-2 0a4 4 0 11-8 0" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M11 9v4m-2-2h4" />
+                <svg className="w-4 h-4 transition-transform duration-300 group-hover/btn:scale-110" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
                 View Plan
+            </button>
+            <button 
+                onClick={(e) => {
+                    e.stopPropagation();
+                    onViewImage(img);
+                }} 
+                className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-7 py-3 rounded-full uppercase tracking-[0.2em] text-[10px] font-bold pointer-events-auto hover:bg-white hover:text-luxury-black transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.2)] flex items-center gap-2 w-full sm:w-auto justify-center group/btn2"
+            >
+                <svg className="w-4 h-4 transition-transform duration-300 group-hover/btn2:rotate-12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                View Image
             </button>
         </div>
 
@@ -133,6 +158,7 @@ const RoomCard = ({ title, img, beds, area, extraInfo, extraIcon, price, onOpenP
 const Rooms = () => {
     const sliderRef = useRef(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
     const navigate = useNavigate();
 
     const scrollPrev = () => {
@@ -201,7 +227,11 @@ const Rooms = () => {
                 >
                     {roomsData.map((room) => (
                         <div key={room.id} className="snap-start shrink-0 w-full lg:w-[calc(50%-12px)]">
-                            <RoomCard {...room} onOpenPopup={() => setIsModalOpen(true)} />
+                            <RoomCard 
+                                {...room} 
+                                onOpenPopup={() => setIsModalOpen(true)} 
+                                onViewImage={(img) => setSelectedImage(img)}
+                            />
                         </div>
                     ))}
                 </div>
@@ -209,8 +239,42 @@ const Rooms = () => {
 
             {/* Popup Form Modal */}
             <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
+            {/* Image Popup Modal */}
+            {selectedImage && (
+                <div 
+                    className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-modal-overlay"
+                    onClick={() => setSelectedImage(null)}
+                >
+                    <div 
+                        className="bg-white max-w-3xl w-full mx-4 rounded-xl shadow-2xl relative animate-modal-content overflow-hidden p-2"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Close Button - Floats over the top right corner */}
+                        <button 
+                            onClick={() => setSelectedImage(null)}
+                            className="absolute top-4 right-4 text-gray-400 hover:text-luxury-black transition-colors p-2 z-10 bg-white/80 backdrop-blur-sm rounded-full shadow-md"
+                        >
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                        
+                        <div className="flex items-center justify-center max-h-[85vh] overflow-hidden">
+                            <img 
+                                src={selectedImage} 
+                                alt="Floor Plan" 
+                                className="max-w-full h-auto object-contain rounded-lg"
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
+
+
         </section>
     );
 };
+
 
 export default Rooms;
