@@ -16,25 +16,27 @@ export const submitLead = (formData) => {
   const urlParams = new URLSearchParams(window.location.search);
 
   // 1. Salesforce Apex REST API (Matching Document Version 3.1)
+  // Clean mobile number to be exactly 10 digits if provided (strip country code)
+  const cleanMobile = (mobile || '').replace(/\D/g, '').slice(-10);
+
+  // 1. Salesforce Apex REST API (Matching Document Version 3.1)
   const salesforceData = {
     firstName,
     lastName,
-    mobile,
+    mobile: cleanMobile,
     email,
     source: urlParams.get('utm_source') || "Web",
     project: "Radiance Eternity",
     subSource: urlParams.get('utm_medium') || "Google_LP_RE",
-    medium: urlParams.get('utm_medium') || "Google_LP_RE",
+    medium: urlParams.get('utm_campaign') || "CPC", // Matches image example
     propertyType: "Apartment",
     city: "Chennai",
     location: "Chennai",
     // All UTM Parameters as per document
-    utm_source: urlParams.get('utm_source') || "",
-    utm_medium: urlParams.get('utm_medium') || "",
-    utm_campaign: urlParams.get('utm_campaign') || "",
-    utm_campaignid: urlParams.get('utm_campaignid') || "",
     utm_adgroup: urlParams.get('utm_adgroup') || "",
     utm_adgroupid: urlParams.get('utm_adgroupid') || "",
+    utm_campaign: urlParams.get('utm_campaign') || "",
+    utm_campaignid: urlParams.get('utm_campaignid') || "",
     utm_content: urlParams.get('utm_content') || "",
     utm_device: urlParams.get('utm_device') || "",
     utm_gclid: urlParams.get('utm_gclid') || "",
@@ -42,13 +44,15 @@ export const submitLead = (formData) => {
     utm_loc_interest: urlParams.get('utm_loc_interest') || "",
     utm_loc_physical: urlParams.get('utm_loc_physical') || "",
     utm_matchtype: urlParams.get('utm_matchtype') || "",
+    utm_medium: urlParams.get('utm_medium') || "",
     utm_network: urlParams.get('utm_network') || "",
     utm_placement: urlParams.get('utm_placement') || "",
+    utm_source: urlParams.get('utm_source') || "",
   };
 
   const salesforceUrl = "https://radiancerealty--partial.sandbox.my.salesforce-sites.com/extrenalsource/services/apexrest/createLead";
 
-  // Trigger Salesforce (Background)
+  // Trigger Salesforce API (Background)
   fetch(salesforceUrl, {
     method: 'POST',
     keepalive: true,

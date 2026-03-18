@@ -77,8 +77,8 @@ const EnquiryModal = ({ isOpen, onClose }) => {
                                     />
                                 </div>
                                 <div>
-                                    <label className="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 block font-bold">Phone Number *</label>
-                                    <PhoneInputField theme="light" value={phone} onChange={setPhone} required />
+                                    <label className="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 block font-bold">Phone Number</label>
+                                    <PhoneInputField theme="light" value={phone} onChange={setPhone} required={false} placeholder="Phone Number" />
                                 </div>
                                 <div>
                                     <label className="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 block font-bold">Email Address *</label>

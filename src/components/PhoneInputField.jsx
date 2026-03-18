@@ -2,7 +2,7 @@ import React from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
-const PhoneInputField = ({ value, onChange, theme = 'dark', placeholder = "Phone Number *" }) => {
+const PhoneInputField = ({ value, onChange, theme = 'dark', placeholder = "Phone Number *", required = true }) => {
     const isDark = theme === 'dark';
     const isModal = theme === 'modal';
 
@@ -37,7 +37,7 @@ const PhoneInputField = ({ value, onChange, theme = 'dark', placeholder = "Phone
                 enableSearch={true}
                 placeholder={placeholder}
                 inputProps={{
-                    required: true,
+                    required: required,
                 }}
                 inputClass={`!w-full !text-sm !transition-colors focus:!outline-none focus:!border-[#9b7a44] focus:!shadow-none ${
                     isModal ? '!rounded !border-gray-200 !bg-white !text-[#222222] !h-[46px] placeholder:!text-[#9ca3af]' : '!rounded-none'

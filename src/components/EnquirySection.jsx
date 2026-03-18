@@ -96,8 +96,8 @@ const EnquirySection = () => {
                                         />
                                     </div>
                                     <div>
-                                        <label className="text-[10px] uppercase tracking-[0.2em] text-luxury-black/60 mb-2 block font-bold">Phone Number *</label>
-                                        <PhoneInputField theme="light" value={phone} onChange={setPhone} />
+                                        <label className="text-[10px] uppercase tracking-[0.2em] text-luxury-black/60 mb-2 block font-bold">Phone Number</label>
+                                        <PhoneInputField theme="light" value={phone} onChange={setPhone} required={false} placeholder="Phone Number" />
                                     </div>
                                 </div>
                                 

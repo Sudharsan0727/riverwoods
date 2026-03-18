@@ -44,12 +44,18 @@ const Hero = () => {
 
 
   return (
-    <section id="home" className="relative flex flex-col lg:block lg:min-h-[90vh] pt-[72px] lg:pt-0 overflow-hidden bg-[#f8f5f0] lg:bg-white">
+    <section id="home" className="relative flex flex-col lg:block h-auto lg:h-[85vh] 2xl:h-[90vh] pt-[72px] lg:pt-0 overflow-hidden bg-[#f8f5f0] lg:bg-white">
       {/* Background Image - Desktop */}
-      <div 
-        className="hidden lg:block lg:absolute lg:inset-0 lg:h-full bg-cover bg-center bg-no-repeat z-0"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      ></div>
+      <div className="hidden lg:block lg:absolute lg:inset-0 lg:h-full z-0">
+        <img 
+          src={heroBg} 
+          alt="Radiance Eternity" 
+          className="w-full h-full object-cover"
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
 
       {/* Banner Image - Mobile (Full Width View) */}
       <div className="lg:hidden w-full relative z-0 mt-0 overflow-hidden shadow-sm">
@@ -57,6 +63,9 @@ const Hero = () => {
           src={heroMobileBg} 
           alt="Radiance Eternity Banner" 
           className="w-full h-auto block"
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
         />
       </div>
 
@@ -81,8 +90,8 @@ const Hero = () => {
                   />
                 </div>
                 <div>
-                  <label className="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 block">Phone Number *</label>
-                  <PhoneInputField theme="light" value={phone} onChange={setPhone} required />
+                  <label className="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 block">Phone Number</label>
+                  <PhoneInputField theme="light" value={phone} onChange={setPhone} required={false} placeholder="Phone Number" />
                 </div>
                 <div>
                   <label className="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 block">Email Address *</label>

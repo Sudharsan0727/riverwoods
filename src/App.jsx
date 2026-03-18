@@ -39,7 +39,7 @@ const HomePage = () => {
         <AboutUs />
         <ProjectHighlights />
         <PricingTable />
-        <Rooms />
+        {/* <Rooms /> */}
         <AmenitiesIconGrid />
         <LocationHighlights />
         <Gallery />
