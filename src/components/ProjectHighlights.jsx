@@ -9,58 +9,56 @@ const ProjectHighlights = () => {
 
     const amenities = [
         {
-            title: "On Main Road Project",
+            title: "3 & 4 BHKs have zero wall sharing",
             icon: (
-                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M8 21L5 3h14l-3 18H8z"/>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 7v2m0 4v2"/>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M2 21h20"/>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 17c2-1 4-1.5 8-1.5s6 .5 8 1.5"/>
+                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" strokeWidth="1" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="7" height="18" rx="1"/>
+                    <rect x="14" y="3" width="7" height="18" rx="1"/>
                 </svg>
             )
         },
         {
-            title: "Ultra-Luxury Living",
+            title: "Each 4 BHK is designed with a private lift & lobby",
             icon: (
-                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M3 9.75L12 3l9 6.75V21H3V9.75z"/>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9 21V12h6v9"/>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 3l1.5 1.5M12 3l-1.5 1.5"/>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M6 13h2m8 0h2M6 16h2m8 0h2"/>
+                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                    <rect x="5" y="3" width="14" height="18" rx="2" ry="2" />
+                    <path d="M12 7v10" />
+                    <path d="M9 10l3-3 3 3" />
+                    <path d="M15 14l-3 3-3-3" />
                 </svg>
             )
         },
         {
-            title: "Panoramic Skyline View",
+            title: "All bedrooms have cross ventilation",
             icon: (
-                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M2 20h20"/>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 20V10l4-4 4 4V8l4-4 4 4v12"/>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M10 20v-5h4v5"/>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M2 12a10 10 0 0 1 20 0" opacity="0.4"/>
-                    <circle cx="12" cy="6" r="1.2" strokeWidth="1" fill="currentColor"/>
+                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                    <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>
                 </svg>
             )
         },
         {
-            title: "100% Vastu Compliant",
+            title: "All units have direct ventilation",
             icon: (
-                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="9" strokeWidth="1"/>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 3v18M3 12h18"/>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 3l2.5 2.5M12 3l-2.5 2.5M12 21l2.5-2.5M12 21l-2.5-2.5"/>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9 9l6 6m0-6l-6 6" opacity="0.5"/>
-                    <circle cx="12" cy="12" r="2" strokeWidth="1"/>
+                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M12 2v2"/>
+                    <path d="M12 20v2"/>
+                    <path d="M5 5l1.5 1.5"/>
+                    <path d="M17.5 17.5L19 19"/>
+                    <path d="M2 12h2"/>
+                    <path d="M20 12h2"/>
+                    <path d="M5 19l1.5-1.5"/>
+                    <path d="M17.5 6.5L19 5"/>
                 </svg>
             )
         },
     ];
 
     return (
-        <section id="highlights" className="section-padding bg-[#f8f5f0] relative overflow-hidden">
+        <section id="highlights" className="section-padding bg-[#fff1f2] relative overflow-hidden">
             {/* Background Texture/Pattern */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none select-none">
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#9b7a44_1px,transparent_1px)] [background-size:40px_40px]"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#9E212A_1px,transparent_1px)] [background-size:40px_40px]"></div>
             </div>
 
             <div className="lux-container relative z-10">
@@ -85,7 +83,7 @@ const ProjectHighlights = () => {
                     {amenities.map((item, index) => (
                         <div 
                             key={index} 
-                            className="group bg-white rounded-[4px] min-h-[200px] p-6 lg:p-8 flex flex-col items-center justify-center text-center transition-all duration-500 hover:bg-[#9b7a44] hover:-translate-y-2 cursor-pointer shadow-sm animate-fade-up animate-delay-1"
+                            className="group bg-white rounded-[4px] min-h-[200px] p-6 lg:p-8 flex flex-col items-center justify-center text-center transition-all duration-500 hover:bg-[#9E212A] hover:-translate-y-2 cursor-pointer shadow-sm animate-fade-up animate-delay-1"
                         >
                             <div className="flex flex-col items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
                                 {/* Icon matching Amenities style */}

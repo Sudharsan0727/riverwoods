@@ -9,20 +9,12 @@ const PricingTable = () => {
 
     const pricingData = [
         {
-            unitType: "2BHK + 2T",
-            area: "1356 Sq.ft. to 1400 Sq.ft.",
+            unitType: "3 BHK Apartments",
+            area: "2296 Sq.ft. - 2315 Sq.ft.",
         },
         {
-            unitType: "3BHK + 2T",
-            area: "1714 Sq.ft. to 1720 Sq.ft.",
-        },
-        {
-            unitType: "3BHK + 3T",
-            area: "1919 Sq.ft. to 2171 Sq.ft.",
-        },
-        {
-            unitType: "4BHK + 4T",
-            area: "2618 Sq.ft. to 2711 Sq.ft.",
+            unitType: "4 BHK Apartments (B+S+13)",
+            area: "3056 Sq.ft. - 3064 Sq.ft.",
         }
     ];
 
@@ -41,14 +33,14 @@ const PricingTable = () => {
                 <div className="max-w-[70rem] mx-auto animate-fade-up animate-delay-1 overflow-x-auto hide-scroll">
                     <div className="min-w-[320px] md:min-w-[800px] border border-gray-200">
                         {/* Table Header */}
-                        <div className="grid grid-cols-3 bg-[#9b7a44] text-white">
-                            <div className="py-3 md:py-4 text-center font-normal text-[10px] md:text-lg border-r border-white/20 tracking-widest uppercase">
+                        <div className="grid grid-cols-3 bg-[#9E212A] text-white">
+                            <div className="py-4 md:py-5 text-center font-normal text-[16px] md:text-lg border-r border-white/20 tracking-widest uppercase">
                                 Unit Type
                             </div>
-                            <div className="py-3 md:py-4 text-center font-normal text-[10px] md:text-lg border-r border-white/20 tracking-widest uppercase">
+                            <div className="py-4 md:py-5 text-center font-normal text-[16px] md:text-lg border-r border-white/20 tracking-widest uppercase">
                                 Built up area
                             </div>
-                            <div className="py-3 md:py-4 text-center font-normal text-[10px] md:text-lg tracking-widest uppercase">
+                            <div className="py-4 md:py-5 text-center font-normal text-[16px] md:text-lg tracking-widest uppercase">
                                 Unit Plan
                             </div>
                         </div>
@@ -60,21 +52,23 @@ const PricingTable = () => {
                                     key={index} 
                                     className="grid grid-cols-3 items-center border-b border-gray-200 hover:bg-gray-50 transition-colors"
                                 >
-                                    <div className="py-4 md:py-5 px-1 md:px-0 text-center text-[11px] md:text-lg font-medium text-gray-700 border-r border-gray-200">
+                                    <div className="py-5 md:py-6 px-1 md:px-0 text-center text-[17px] md:text-lg font-medium text-gray-700 border-r border-gray-200">
                                         {row.unitType}
                                     </div>
-                                    <div className="py-4 md:py-5 px-1 md:px-0 text-center text-[10px] md:text-lg text-gray-600 border-r border-gray-200">
+                                    <div className="py-5 md:py-6 px-1 md:px-0 text-center text-[16px] md:text-lg text-gray-600 border-r border-gray-200">
                                         {row.area}
                                     </div>
                                     <div className="py-4 md:py-5 px-1 md:px-2 flex justify-center">
                                         <button 
                                             onClick={() => setIsModalOpen(true)}
-                                            className="btn-gold !py-2 !px-2 md:!py-3 md:!px-6 !text-[9px] md:!text-xs !shadow-none hover:!translate-y-0 transition-all duration-300 flex items-center gap-1 md:gap-2"
+                                            className="btn-gold !py-2 md:!py-3 !px-2 md:!px-6 !text-[12px] md:!text-xs !shadow-none hover:!translate-y-0 transition-all duration-300 flex items-center justify-center text-center gap-1.5 md:gap-2.5"
                                         >
                                             <svg className="hidden md:block w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v13m0 0l-4-4m4 4l4-4M3 20h18" />
                                             </svg>
-                                            Download Unit Plan
+                                            <span className="leading-tight">
+                                                Download <br className="md:hidden" /> Unit Plan
+                                            </span>
                                         </button>
                                     </div>
                                 </div>

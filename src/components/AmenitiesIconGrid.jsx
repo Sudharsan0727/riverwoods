@@ -9,132 +9,141 @@ const AmenitiesIconGrid = () => {
     // 6 Premium amenities mirroring the structure
     const allAmenities = [
         {
-            title: "Multi-purpose gathering zone",
-            description: "A versatile space for community events and social interactions.",
-            icon: (
-                <svg className="w-12 h-12 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-            )
-        },
-        {
-            title: "Kids play area",
-            description: "A safe and fun environment for children to explore and play.",
-            icon: (
-                <svg className="w-12 h-12 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-            )
-        },
-        {
-            title: "Co-working space",
-            description: "A productive and inspiring environment to work from home effectively.",
-            icon: (
-                <svg className="w-12 h-12 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-            )
-        },
-        {
-            title: "Swimming pool",
+            title: "Swimming Pool",
             description: "Relax, refresh, and unwind in our luxurious pool.",
             icon: (
-                <svg className="w-12 h-12 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M21 16.5c0 .38-.21.71-.53.88l-7.97 4.13a1 1 0 01-.98 0l-7.97-4.13a1 1 0 01-.53-.88V7.5c0-.38.21-.71.53-.88l7.97-4.13a1 1 0 01.98 0l7.97 4.13c.32.17.53.5.53.88v9z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M3.52 14.3a1 1 0 01.48-.1h16a1 1 0 01.48.1M3.52 12.3a1 1 0 01.48-.1h16a1 1 0 01.48.1M3.52 10.3a1 1 0 01.48-.1h16a1 1 0 01.48.1" />
+                <svg className="w-12 h-12 mb-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.5 10c0-1.4-1.1-2.5-2.5-2.5s-2.5 1.1-2.5 2.5 1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5z" />
+                    <path d="M16.5 10c-1.5-.5-3-1.5-4.5-3.5L8 3c-1-1-1.5.5-1 1l3 4.5c.5.8 1.5 1.5 2.5 1.8l-7.5 5.2h11.5L20 11.5l-3.5-1.5z" />
+                    <g fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round">
+                        <path d="M2 15c2-1 3-1 5 0s3 1 5 0 3-1 5 0 3 1 5 0" />
+                        <path d="M2 18c2-1 3-1 5 0s3 1 5 0 3-1 5 0 3 1 5 0" />
+                        <path d="M2 21c2-1 3-1 5 0s3 1 5 0 3-1 5 0 3 1 5 0" />
+                    </g>
                 </svg>
             )
         },
         {
-            title: "Gymnasium",
+            title: "Meditation Pavilion",
+            description: "A tranquil space dedicated to wellness and inner peace.",
+            icon: (
+                <svg className="w-12 h-12 mb-4" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <circle cx="12" cy="2.5" r="1.2" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5c-1.5 0-2.8 1.2-2.8 2.8 0 1 0.5 1.8 1.3 2.3 0.5 0.3 1 0.5 1.5 0.5s1-0.2 1.5-0.5c0.8-0.5 1.3-1.3 1.3-2.3 0-1.6-1.3-2.8-2.8-2.8z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 10.5c-2 1-3.5 2.5-4 5M14 10.5c2 1 3.5 2.5 4 5M9.5 11c0 1.5 1 2.5 2.5 2.5s2.5-1 2.5-2.5" opacity="0.8" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M7 13.5L3 18.5l3.5 2.5M17 13.5L21 18.5l-3.5 2.5" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2 21h20c-1-3-4-4.5-5-4.5H7c-1 0-4 1.5-5 4.5z" />
+                </svg>
+            )
+        },
+        {
+            title: "Multipurpose Hall",
+            description: "Perfect for events, gatherings, and celebrations.",
+            icon: (
+                <svg className="w-12 h-12 mb-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="16" rx="2" ry="2"/>
+                    <line x1="3" x2="21" y1="10" y2="10"/>
+                    <line x1="8" x2="8" y1="10" y2="20"/>
+                    <line x1="16" x2="16" y1="10" y2="20"/>
+                </svg>
+            )
+        },
+        {
+            title: "Gym",
             description: "Stay fit with our state-of-the-art fitness equipment.",
             icon: (
                 <svg className="w-12 h-12 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 4v16m0 0c-1.105 0-2-.895-2-2v-4a2 2 0 114 0v4c0 1.105-.895 2-2 2zM9 8h6m-6 4h6m-6 4h6M6 4h12M6 20h12" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M6 7v10M18 7v10M4 9a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1V9zm12 0a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1V9zM8 12h8" />
                 </svg>
             )
         },
         {
-            title: "Multi-purpose play court",
-            description: "Designed for various sports activities and active living.",
+            title: "Kids Play Area",
+            description: "A safe and fun environment for children to explore and play.",
             icon: (
-                <svg className="w-12 h-12 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M3 6l3 12m0 0l3-12m-3 12h12m0 0l3-12m-3 12l-3-12" />
-                    <circle cx="12" cy="12" r="3" strokeWidth="1" />
+                <svg className="w-12 h-12 mb-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M10 22h4l-1-4h-2l-1 4z" />
+                    <circle cx="12" cy="17" r="1.5" />
+                    <rect x="2" y="15" width="20" height="1.2" transform="rotate(-12 12 16)" rx="0.5" />
+                    <g transform="translate(6, 14) rotate(-12)">
+                        <circle cx="-1" cy="-6" r="1.8" />
+                        <path d="M-2 -4c-0.5 1-1 3.5-1 4.5s0.5 2.5 1.5 2.5 2-1 2-2c0-1-0.5-4-1-5z" />
+                        <path d="M0 -1h2.5v2" fill="none" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round" />
+                    </g>
+                    <g transform="translate(18, 11.5) rotate(-12)">
+                        <circle cx="1" cy="-6" r="1.8" />
+                        <path d="M0 -4c-0.5 1-1 3.5-1 4.5s0.5 2.5 1.5 2.5 2-1 2-2c0-1-0.5-4-1-5z" />
+                        <path d="M0 -1h-2.5v2" fill="none" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round" />
+                    </g>
+                </svg>
+            )
+        },
+        {
+            title: "Business Lounge",
+            description: "A productive and inspiring environment to work seamlessly.",
+            icon: (
+                <svg className="w-12 h-12 mb-4" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
                 </svg>
             )
         }
     ];
 
     return (
-        <section id="features" className="section-padding bg-white relative">
-            <div className="lux-container max-w-[1300px] relative z-10">
-                
-                {/* Asymmetric Split Layout */}
-                <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-24">
-                    
-                    {/* Left Column: Info & Button */}
-                    <div className="w-full lg:w-[35%] animate-fade-up">
+        <section id="features" className="relative py-20 bg-white border-y border-gray-100 overflow-hidden">
+            {/* Subtle Gradient Backdrop */}
+            <div className="absolute top-0 left-0 w-full h-[300px] bg-gradient-to-b from-[#faf9f8] to-transparent pointer-events-none"></div>
 
-                        
-                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading leading-[1.1] text-luxury-black mb-6">
-                            AMENITIES
-                        </h2>
-                        
-                        <p className="text-xl text-luxury-text leading-relaxed mb-6 lg:mb-10 max-w-sm">
-                            Discover a world of thoughtfully curated amenities designed to bring comfort, convenience, and luxury to your modern lifestyle.
-                        </p>
-                        
-                        <button onClick={() => setIsModalOpen(true)} className="btn-gold hidden lg:flex items-center justify-center gap-3 whitespace-nowrap">
-                            <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                            </svg>
-                            <span>View Amenities</span>
-                        </button>
-                    </div>
-
-                    {/* Right Column: Grid of Exactly 6 Cards */}
-                    <div className="w-full lg:w-[65%]">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-up animate-delay-1">
-                            {allAmenities.map((item, index) => (
-                                <div 
-                                    key={index} 
-                                    className="group bg-[#f8f5f0] rounded-[4px] min-h-[220px] p-6 flex flex-col items-center justify-center text-center transition-all duration-500 hover:bg-[#9b7a44] hover:-translate-y-2 cursor-pointer shadow-sm relative overflow-hidden"
-                                >
-                                    <div className="flex flex-col items-center justify-center transition-transform duration-500 group-hover:-translate-y-6">
-                                        {/* Icon */}
-                                        <div className="text-gold group-hover:text-white transition-colors duration-500">
-                                            {item.icon}
-                                        </div>
-                                        {/* Standard Capitalized Title */}
-                                        <h4 className="text-[17px] font-heading font-normal text-[#222222] group-hover:text-white transition-colors duration-500 tracking-wide px-4 mb-6">
-                                            {item.title}
-                                        </h4>
-                                    </div>
-                                    
-                                    <div className="absolute bottom-5 left-0 right-0 px-8 opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">
-                                        <p className="!text-white text-[13px] font-sans leading-relaxed">
-                                            {item.description}
-                                        </p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Mobile View Button - Visible only on mobile, below the 6 boxes */}
-                        <div className="mt-10 lg:hidden flex justify-center animate-fade-up">
-                            <button onClick={() => setIsModalOpen(true)} className="btn-gold !flex items-center justify-center gap-3 whitespace-nowrap w-full">
-                                <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                </svg>
-                                <span>View Amenities</span>
-                            </button>
-                        </div>
-                    </div>
+            <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+                {/* Header */}
+                <div className="flex flex-col items-center text-center mb-16 animate-fade-up">
+                    <span className="font-condensed text-gold uppercase tracking-[0.25em] text-[12px] mb-3 block">
+                        WORLD-CLASS FACILITIES
+                    </span>
+                    <h2 className="text-[34px] md:text-[44px] font-heading leading-tight text-luxury-black mb-5">
+                        Exceptional <span className="text-[#9E212A] italic">Amenities</span>
+                    </h2>
+                    <p className="font-body text-gray-500 text-[15px] max-w-2xl mx-auto">
+                        Experience a lifestyle designed for your utmost comfort, wellness, and leisure with our thoughtfully curated premium spaces.
+                    </p>
                 </div>
 
+                {/* Small Icon Box Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-5 animate-fade-up animate-delay-1">
+                    {allAmenities.map((item, index) => (
+                        <div 
+                            key={index}
+                            className="group flex flex-col items-center justify-center p-6 bg-white border border-gray-100 rounded-xl hover:border-gold hover:shadow-[0_15px_30px_-10px_rgba(212,175,55,0.2)] transition-all duration-500 hover:-translate-y-2 cursor-pointer aspect-square relative overflow-hidden"
+                            style={{ animationDelay: `${index * 100}ms` }}
+                        >
+                            {/* Hover accent top line */}
+                            <span className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold to-[#9E212A] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+                            
+                            <div className="text-gray-400 group-hover:text-[#9E212A] transition-colors duration-500 mb-4 transform group-hover:scale-110">
+                                {React.cloneElement(item.icon, { className: "w-10 h-10 md:w-12 md:h-12 m-0 stroke-[1.2]" })}
+                            </div>
+                            
+                            <h4 className="text-[13px] md:text-[14px] font-heading text-center text-luxury-black group-hover:text-[#9E212A] transition-colors duration-500 leading-tight px-2">
+                                {item.title}
+                            </h4>
+                        </div>
+                    ))}
+                </div>
+
+                {/* View All Features Button */}
+                <div className="mt-16 flex justify-center animate-fade-up animate-delay-2">
+                    <button 
+                        onClick={() => setIsModalOpen(true)} 
+                        className="bg-[#9E212A] text-white flex items-center justify-center gap-2 py-3.5 px-10 text-[12px] md:text-[13px] font-heading tracking-widest hover:bg-[#7e1921] hover:-translate-y-0.5 transition-all duration-300 shadow-sm"
+                    >
+                        <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                        <span className="truncate">VIEW ALL FEATURES</span>
+                    </button>
+                </div>
             </div>
 
             {/* Popup Form Modal */}

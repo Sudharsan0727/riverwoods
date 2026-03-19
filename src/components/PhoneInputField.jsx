@@ -15,7 +15,7 @@ const PhoneInputField = ({ value, onChange, theme = 'dark', placeholder = "Phone
                 }
                 .phone-input-container .react-tel-input .country-list .country:hover, 
                 .phone-input-container .react-tel-input .country-list .country.highlight {
-                    background-color: #f8f5f0;
+                    background-color: #fff1f2;
                 }
                 .phone-input-container .react-tel-input .selected-flag:hover, 
                 .phone-input-container .react-tel-input .selected-flag:focus {
@@ -39,7 +39,7 @@ const PhoneInputField = ({ value, onChange, theme = 'dark', placeholder = "Phone
                 inputProps={{
                     required: required,
                 }}
-                inputClass={`!w-full !text-sm !transition-colors focus:!outline-none focus:!border-[#9b7a44] focus:!shadow-none ${
+                inputClass={`!w-full !text-sm !transition-colors focus:!outline-none focus:!border-[#9E212A] focus:!shadow-none ${
                     isModal ? '!rounded !border-gray-200 !bg-white !text-[#222222] !h-[46px] placeholder:!text-[#9ca3af]' : '!rounded-none'
                 } ${
                     isDark && !isModal
@@ -49,7 +49,7 @@ const PhoneInputField = ({ value, onChange, theme = 'dark', placeholder = "Phone
                 buttonClass={`!border-r-0 !bg-transparent ${isModal ? '!rounded-l !border-gray-200 hover:!bg-gray-50' : '!rounded-none'} ${
                     isDark && !isModal
                         ? '!border-white/20 hover:!bg-white/10'
-                        : !isModal ? '!border-[#fffdfb] hover:!bg-[#f8f5f0]' : ''
+                        : !isModal ? '!border-[#fffdfb] hover:!bg-[#fff1f2]' : ''
                 }`}
                 dropdownClass="!rounded-none !text-sm !bg-white !text-[#222222] !border-[#fffdfb]"
                 searchClass="!rounded-none !text-sm !w-[90%] !ml-2 !bg-white !text-[#222222] !border-[#fffdfb]"

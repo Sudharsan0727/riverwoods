@@ -22,8 +22,8 @@ const ThankYou = () => {
 
     const handleDownload = async (e) => {
         e.preventDefault();
-        const pdfUrl = "https://www.radiancerealty.in/images/pdf/radiance_eternity_brochure.pdf";
-        const fileName = "radiance_eternity_brochure.pdf";
+        const pdfUrl = "https://www.radiancerealty.in/images/pdf/radiance_solitaire_brochure.pdf";
+        const fileName = "radiance_solitaire_brochure.pdf";
 
         try {
             const response = await fetch(pdfUrl);
@@ -70,36 +70,36 @@ const ThankYou = () => {
 
                     {/* Action Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-up animate-delay-1 mt-12">
-                        {/* Cinematic 360 */}
+                        {/* Route Map Video */}
                         <a 
-                            href="https://app.urbanvue.in/radiance-eternity" 
+                            href="https://www.youtube.com/watch?v=AKVrvOVASz0" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="group bg-[#f8f5f0] p-8 rounded-sm border border-gray-100 transition-all duration-500 hover:bg-[#9b7a44] hover:-translate-y-2 cursor-pointer shadow-sm flex flex-col items-center no-underline"
+                            className="group bg-[#fff1f2] p-8 rounded-sm border border-gray-100 transition-all duration-500 hover:bg-[#9E212A] hover:-translate-y-2 cursor-pointer shadow-sm flex flex-col items-center no-underline"
                         >
                             <div className="text-gold group-hover:text-white transition-colors duration-500 mb-6 flex justify-center">
                                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
                             </div>
                             <h4 className="text-[17px] font-heading font-normal text-luxury-black group-hover:text-white transition-colors duration-500 tracking-wide mb-2 uppercase">
-                                Cinematic 360
+                                Route Map
                             </h4>
                             <p className="text-xs text-luxury-text group-hover:!text-white transition-colors duration-500 mb-6">
-                                Explore every corner of luxury.
+                                Visualize the connected location.
                             </p>
                             <span className="mt-auto text-[10px] uppercase tracking-widest font-bold text-gold group-hover:text-white border-b border-gold group-hover:border-white pb-1 transition-all duration-300">
-                                View Experience
+                                Watch Video
                             </span>
                         </a>
 
                         {/* Walkthrough */}
                         <a 
-                            href="https://www.youtube.com/watch?v=UsH3AaVKHno&t=11s" 
+                            href="https://www.youtube.com/watch?v=CR8vU8EYLkI&t=279s" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="group bg-[#f8f5f0] p-8 rounded-sm border border-gray-100 transition-all duration-500 hover:bg-[#9b7a44] hover:-translate-y-2 cursor-pointer shadow-sm flex flex-col items-center no-underline"
+                            className="group bg-[#fff1f2] p-8 rounded-sm border border-gray-100 transition-all duration-500 hover:bg-[#9E212A] hover:-translate-y-2 cursor-pointer shadow-sm flex flex-col items-center no-underline"
                         >
                             <div className="text-gold group-hover:text-white transition-colors duration-500 mb-6 flex justify-center">
                                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -121,7 +121,7 @@ const ThankYou = () => {
                         {/* Download Brochure */}
                         <button 
                             onClick={handleDownload}
-                            className="group bg-[#f8f5f0] p-8 rounded-sm border border-gray-100 transition-all duration-500 hover:bg-[#9b7a44] hover:-translate-y-2 cursor-pointer shadow-sm flex flex-col items-center no-underline w-full"
+                            className="group bg-[#fff1f2] p-8 rounded-sm border border-gray-100 transition-all duration-500 hover:bg-[#9E212A] hover:-translate-y-2 cursor-pointer shadow-sm flex flex-col items-center no-underline w-full"
                         >
                             <div className="text-gold group-hover:text-white transition-colors duration-500 mb-6 flex justify-center">
                                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">

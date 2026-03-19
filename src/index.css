@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100..900;1,100..900&family=Barlow+Condensed:ital,wght@0,100..900;1,100..900&family=Gilda+Display&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-heading: "Gilda Display", serif;
-  --font-body: "Barlow", sans-serif;
-  --font-condensed: "Barlow Condensed", sans-serif;
+  --font-heading: "Lora", serif;
+  --font-body: "Lora", serif;
+  --font-condensed: "Lora", serif;
+  --font-accent: "Lora", serif;
   
-  --color-gold: #aa8453;
-  --color-gold-dark: #a67f59;
+  --color-gold: #9E212A;
+  --color-gold-dark: #821b22;
   --color-luxury-black: #222222;
   --color-luxury-gray: #fffdfb;
   --color-luxury-text: #666666;

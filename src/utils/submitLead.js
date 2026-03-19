@@ -26,8 +26,8 @@ export const submitLead = (formData) => {
     mobile: cleanMobile,
     email,
     source: urlParams.get('utm_source') || "Web",
-    project: "Radiance Solitaire",
-    subSource: urlParams.get('utm_medium') || "Google_LP_RS",
+    project: "Radiance Platinum",
+    subSource: urlParams.get('utm_medium') || "Google_LP_RP",
     medium: urlParams.get('utm_campaign') || "CPC", // Matches image example
     propertyType: "Apartment",
     city: "Chennai",
@@ -68,7 +68,7 @@ export const submitLead = (formData) => {
           fullName,
           email,
           mobile,
-          project: "Radiance Solitaire"
+          project: "Radiance Platinum"
       }),
       keepalive: true
   }).catch(err => console.error("Email Error:", err));

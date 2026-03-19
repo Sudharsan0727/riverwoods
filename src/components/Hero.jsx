@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PhoneInputField from './PhoneInputField';
-import heroBg from '../assets/img/RADIANCE_banner.jpeg';
-import heroMobileBg from '../assets/img/Mobile-banner.jpeg';
+import heroBg from '../assets/img/Platinum_banner.jpeg';
+import heroMobileBg from '../assets/img/Platinum_Mobilebanner.jpeg';
 import { submitLead } from '../utils/submitLead';
 
 import SuccessModal from './SuccessModal';
@@ -44,12 +44,11 @@ const Hero = () => {
 
 
   return (
-    <section id="home" className="relative flex flex-col lg:block h-auto lg:h-[85vh] 2xl:h-[90vh] pt-[72px] lg:pt-0 overflow-hidden bg-[#f8f5f0] lg:bg-white">
-      {/* Background Image - Desktop */}
+    <section id="home" className="relative flex flex-col lg:block h-auto lg:h-[90vh] 2xl:h-[95vh] pt-[72px] lg:pt-0 overflow-hidden bg-[#fff1f2] lg:bg-white">      {/* Background Image - Desktop */}
       <div className="hidden lg:block lg:absolute lg:inset-0 lg:h-full z-0">
         <img 
           src={heroBg} 
-          alt="Radiance Solitaire" 
+          alt="Radiance Platinum" 
           className="w-full h-full object-cover"
           fetchPriority="high"
           loading="eager"
@@ -61,7 +60,7 @@ const Hero = () => {
       <div className="lg:hidden w-full relative z-0 mt-0 overflow-hidden shadow-sm">
         <img 
           src={heroMobileBg} 
-          alt="Radiance Solitaire Banner" 
+          alt="Radiance Platinum Banner" 
           className="w-full h-auto block"
           fetchPriority="high"
           loading="eager"
@@ -74,11 +73,11 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Form Side: Below image on mobile */}
           <div className="lg:col-span-5 lg:col-start-8">
-            <div className="bg-white p-6 md:p-8 rounded-sm relative z-10 shadow-xl lg:shadow-2xl border border-gray-100 lg:border-none mx-auto max-w-lg lg:max-w-none">
-              <h3 className="text-2xl font-heading text-luxury-black mb-6 text-center italic">Enquiry Now</h3>
+            <div className="bg-[#9E212A] lg:bg-white p-6 md:p-8 rounded-sm relative z-10 shadow-xl lg:shadow-2xl border border-gold/20 lg:border-none mx-auto max-w-lg lg:max-w-none">
+              <h3 className="text-2xl font-heading text-white lg:text-luxury-black mb-6 text-center italic">Enquiry Now</h3>
               <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
-                  <label className="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 block">Full Name *</label>
+                  <label className="text-[10px] uppercase tracking-[0.2em] text-white lg:text-gray-500 mb-2 block">Full Name *</label>
                   <input 
                     type="text" 
                     name="fullName"
@@ -86,15 +85,20 @@ const Hero = () => {
                     onChange={handleInputChange}
                     required 
                     placeholder="Your Name" 
-                    className="w-full bg-gray-50 border border-gray-200 px-4 py-2 text-luxury-black placeholder:text-gray-400 text-sm focus:outline-none focus:border-gold transition-colors" 
+                    className="w-full bg-white/10 lg:bg-gray-50 border border-white/20 lg:border-gray-200 px-4 py-2 text-white lg:text-luxury-black placeholder:text-white/40 lg:placeholder:text-gray-400 text-sm focus:outline-none focus:border-gold transition-colors" 
                   />
                 </div>
                 <div>
-                  <label className="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 block">Phone Number</label>
-                  <PhoneInputField theme="light" value={phone} onChange={setPhone} required={false} placeholder="Phone Number" />
+                  <label className="text-[10px] uppercase tracking-[0.2em] text-white lg:text-gray-500 mb-2 block">Phone Number</label>
+                  <div className="lg:hidden">
+                    <PhoneInputField theme="dark" value={phone} onChange={setPhone} required={false} placeholder="Phone Number" />
+                  </div>
+                  <div className="hidden lg:block">
+                    <PhoneInputField theme="light" value={phone} onChange={setPhone} required={false} placeholder="Phone Number" />
+                  </div>
                 </div>
                 <div>
-                  <label className="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 block">Email Address *</label>
+                  <label className="text-[10px] uppercase tracking-[0.2em] text-white lg:text-gray-500 mb-2 block">Email Address *</label>
                   <input 
                     type="email" 
                     name="email"
@@ -102,17 +106,17 @@ const Hero = () => {
                     onChange={handleInputChange}
                     required 
                     placeholder="email@example.com" 
-                    className="w-full bg-gray-50 border border-gray-200 px-4 py-2 text-luxury-black placeholder:text-gray-400 text-sm focus:outline-none focus:border-gold transition-colors" 
+                    className="w-full bg-white/10 lg:bg-gray-50 border border-white/20 lg:border-gray-200 px-4 py-2 text-white lg:text-luxury-black placeholder:text-white/40 lg:placeholder:text-gray-400 text-sm focus:outline-none focus:border-gold transition-colors" 
                   />
                 </div>
                 <button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className={`w-full btn-gold !py-3 shadow-xl mt-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  className={`w-full bg-white text-[#9E212A] lg:bg-[#9E212A] lg:text-white lg:btn-gold font-bold uppercase tracking-widest py-3 text-xs lg:!py-3 shadow-xl mt-2 transition-all hover:bg-white/90 lg:hover:bg-gold-dark ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit'}
                 </button>
-                <p className="text-[10px] text-gray-500 opacity-100 font-medium text-center mt-3 leading-tight">
+                <p className="text-[10px] !text-white lg:!text-gray-500 opacity-100 font-medium text-center mt-3 leading-tight">
                   Your information is secure. We will only contact you regarding your inquiry.
                 </p>
               </form>
