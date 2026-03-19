@@ -5,21 +5,21 @@ const testimonials = [
         id: 1,
         name: "Prem Chandran",
         role: "Resident",
-        quote: "For anyone looking at reviews before booking an apartment at Radiance Eternity in Thoraipakkam, honestly there’s no need to keep searching around for better options. We’re really happy that we decided to book our apartment here.\n\nCustomer service – 5/5\nLocation – 5/5",
+        quote: "For anyone looking at reviews before booking an apartment at Radiance Solitaire in Thoraipakkam, honestly there’s no need to keep searching around for better options. We’re really happy that we decided to book our apartment here.\n\nCustomer service – 5/5\nLocation – 5/5",
         rating: 5,
     },
     {
         id: 2,
         name: "Aishwarya G",
         role: "Resident",
-        quote: "Radiance Eternity Thoraipakkam has good specifications of flats and other amenities. Happy to become a part of Radiance family.",
+        quote: "Radiance Solitaire Thoraipakkam has good specifications of flats and other amenities. Happy to become a part of Radiance family.",
         rating: 5,
     },
     {
         id: 3,
         name: "Karthikeyan T",
         role: "Resident",
-        quote: "Recently bought an apartment at Radiance Eternity. The project is well planned with good layouts, decent amenities, and a convenient location. Sales team was responsive and the booking process was smooth. Looking forward to timely completion and handover.",
+        quote: "Recently bought an apartment at Radiance Solitaire. The project is well planned with good layouts, decent amenities, and a convenient location. Sales team was responsive and the booking process was smooth. Looking forward to timely completion and handover.",
         rating: 5,
     }
 ];

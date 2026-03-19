@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import mainLogo from '../assets/img/Radiane1.png';
+import solitaireLogo from '../assets/img/sollitare_logo.svg';
 
 const Header = () => {
   return (
@@ -8,8 +8,8 @@ const Header = () => {
       <div className="lux-container flex justify-center">
         <Link to="/" className="w-32 md:w-48 transition-transform hover:scale-105 duration-300">
           <img 
-            src={mainLogo} 
-            alt="Radiance Eternity" 
+            src={solitaireLogo} 
+            alt="Solitaire Logo" 
             className="w-full h-auto object-contain"
           />
         </Link>

@@ -1,93 +1,129 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import PhoneInputField from './PhoneInputField';
 import EnquiryModal from './EnquiryModal';
 import about1 from '../assets/img/about1.jpg';
 import about2 from '../assets/img/about2.jpg';
 
 const AboutUs = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [scrollProgress, setScrollProgress] = useState(0);
+    const sectionRef = useRef(null);
     const navigate = useNavigate();
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (sectionRef.current) {
+                const rect = sectionRef.current.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                // Calculate position relative to viewport (0 = enters bottom, 1 = leaves top)
+                const distance = windowHeight - rect.top;
+                const totalDistance = windowHeight + rect.height;
+                const progress = Math.max(0, Math.min(1, distance / totalDistance));
+                
+                setScrollProgress(progress);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial position
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // "Inner Move" Parallax (Image moves inside the fixed container)
+    // We scale the image up (e.g. 1.3) so it has "room" to move inside its overflow-hidden box
+    const innerMoveX_Back = -30 + scrollProgress * 60;   // Moves inside the container
+    const innerMoveY_Back = -20 + scrollProgress * 40;
+    
+    const innerMoveX_Front = 40 - scrollProgress * 80;   // Moves opposite inside the container
+    const innerMoveY_Front = 30 - scrollProgress * 60;
+
+    const zoomImg = 1.1 + scrollProgress * 0.15; // Base scale for the "window" effect
+
     return (
-        <section id="about" className="section-padding bg-white overflow-hidden">
-            <div className="lux-container">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <section id="about" ref={sectionRef} className="section-padding py-24 bg-white overflow-hidden">
+            <div className="lux-container max-w-7xl mx-auto px-6 lg:px-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
                     
-                    {/* Left Content Column */}
-                    <div className="animate-fade-up">
-                        <span className="text-gold uppercase tracking-[0.3em] text-[13px] font-bold mb-2 block">
-                            ABOUT RADIANCE ETERNITY
-                        </span>
-                        
-                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading mb-4 leading-[1.1] text-luxury-black">
-                            Elevated Living, <br /> <span className="text-gold italic">Endless Comfort</span>
-                        </h2>
-                        
-                        <div className="mb-6">
-                            <p className="text-lg !text-black opacity-100 font-medium leading-relaxed">
-                                Discover a world where luxury takes centre stage - where architectural brilliance meets refined functionality. A home that reflects pride, prestige and aspiration. More than just a residence, it's your sanctuary for today and generations to come.
-                            </p>
-                        </div>
-
-                        {/* Project Details */}
-                        <div className="space-y-2 mb-6">
-                            <div className="flex items-start gap-4">
-                                <span className="text-gold mt-1 shrink-0">
-                                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-                                </span>
-                                <p className="text-[17px] text-black font-medium"><span className="font-bold text-luxury-black">Type:</span> 2, 3 &amp; 4 BHK Apartments</p>
-                            </div>
-                            <div className="flex items-start gap-4">
-                                <span className="text-gold mt-1 shrink-0">
-                                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-                                </span>
-                                <p className="text-[17px] text-black font-medium"><span className="font-bold text-luxury-black">Blocks:</span> A &amp; B – 2 Basement + Stilt + 22 Floors / 10 Floors</p>
-                            </div>
-                            <div className="flex items-start gap-4">
-                                <span className="text-gold mt-1 shrink-0">
-                                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-                                </span>
-                                <p className="text-[17px] text-black font-medium"><span className="font-bold text-luxury-black">Development Size:</span> 2.21 Acres &nbsp;|&nbsp; <span className="font-bold text-luxury-black">Units:</span> 215 Apartments</p>
-                            </div>
-                        </div>
-
-                        {/* Action Row */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-                            <button onClick={() => setIsModalOpen(true)} className="btn-gold !flex items-center justify-center gap-3 w-full whitespace-nowrap group">
-                                <svg className="w-4 h-4 shrink-0 relative z-10" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v13m0 0l-4-4m4 4l4-4M3 20h18" />
-                                </svg>
-                                <span className="relative z-10">Download Brochure</span>
-                            </button>
+                    {/* Left Column: Overlapping Images (Uniform Size Model) */}
+                    <div className="relative order-2 lg:order-1 flex justify-center lg:block">
+                        <div className="relative w-full max-w-[550px] h-[700px] md:h-[750px]">
+                            {/* Decorative Gold Frame (Aligned to Uniform Size) */}
+                            <div className="absolute top-[30px] right-[40px] w-[325px] h-[580px] border-[2px] border-gold/40 z-0"></div>
                             
-                            <a href="tel:+917418066657" className="bg-[#6d6d6d] text-white px-8 py-4 uppercase tracking-[0.2em] text-xs font-bold hover:bg-gold transition-all duration-300 flex items-center justify-center gap-2 w-full whitespace-nowrap">
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                </svg>
-                                Call Now
-                            </a>
+                            {/* Back Image (Top-Left Window) - Uniform size */}
+                            <div className="absolute top-[20px] left-[20px] w-[325px] h-[580px] overflow-hidden shadow-2xl z-10 animate-fade-up">
+                                <img 
+                                    src={about2} 
+                                    alt="Solitaire Building Exterior" 
+                                    className="w-full h-full object-cover grayscale-[0.1] transition-transform duration-500 ease-out will-change-transform"
+                                    style={{ 
+                                        transform: `scale(${zoomImg + 0.2}) translate(${innerMoveX_Back}px, ${innerMoveY_Back}px)` 
+                                    }}
+                                />
+                            </div>
+                            
+                            {/* Front Image (Bottom-Right Window) - Uniform size */}
+                            <div className="absolute top-[100px] left-[160px] w-[325px] h-[580px] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.2)] z-20 border-[12px] border-white bg-white animate-fade-up animate-delay-1">
+                                <img 
+                                    src={about1} 
+                                    alt="Luxury Interior" 
+                                    className="w-full h-full object-cover transition-transform duration-500 ease-out font-bold will-change-transform"
+                                    style={{ 
+                                        transform: `scale(${zoomImg + 0.25}) translate(${innerMoveX_Front}px, ${innerMoveY_Front}px)` 
+                                    }}
+                                />
+                            </div>
                         </div>
                     </div>
 
-                    {/* Right Images Column */}
-                    <div className="hidden lg:flex gap-4 md:gap-8 animate-fade-up h-[300px] md:h-[400px] lg:h-[500px] items-center">
-                        {/* First Image - Floating Up/Down */}
-                        <div className="flex-1 h-[90%] md:h-[80%] overflow-hidden rounded-2xl shadow-lg mt-12 bg-luxury-gray animate-float">
-                            <img 
-                                src={about1} 
-                                alt="Luxury Interior" 
-                                className="w-full h-full object-cover grayscale-[0.1] hover:grayscale-0 transition-all duration-700 hover:scale-105" 
-                            />
-                        </div>
+                    {/* Right Column: Structured Text content (Reduced Sizing) */}
+                    <div className="order-1 lg:order-2 animate-fade-up">
+                        <span className="font-condensed text-gold uppercase tracking-[0.3em] text-[13px] mb-3 block">
+                            ABOUT RADIANCE SOLITAIRE
+                        </span>
                         
-                        {/* Second Image - Floating Up/Down Staggered */}
-                        <div className="flex-1 h-[90%] md:h-[80%] overflow-hidden rounded-2xl shadow-lg mb-12 bg-luxury-gray animate-float-delayed">
-                            <img 
-                                src={about2} 
-                                alt="Building Exterior" 
-                                className="w-full h-full object-cover grayscale-[0.1] hover:grayscale-0 transition-all duration-700 hover:scale-105" 
-                            />
+                        <h2 className="text-[32px] md:text-[40px] font-heading mb-5 leading-[1.2] text-luxury-black">
+                            Timeless Elegance, <br /> <span className="text-gold italic">Refined Living</span>
+                        </h2>
+                        
+                        <div className="mb-6">
+                            <p className="text-[19px] md:text-[21px] font-heading text-gold leading-[1.4] mb-4">
+                                Step into a world where sophistication meets thoughtful design—where every detail is crafted to perfection.
+                            </p>
+                            <p className="font-body text-[15px] text-luxury-text leading-[1.7] mb-6">
+                                Inspired by the brilliance of a solitaire, these homes offer a seamless blend of modern architecture and functional luxury. From striking exteriors to warm, well-planned interiors, every space reflects superior quality, intelligent design, and an abundance of natural light. More than just a home, it’s a statement of style, comfort, and enduring value for generations to cherish.
+                            </p>
+                        </div>
+
+                        {/* Feature List (Compact) */}
+                        <div className="space-y-3 mb-8">
+                            {[
+                                { label: "Type", value: "2, 2.5, 3 & 4 BHK Apartments & Penthouses" },
+                                { label: "Blocks", value: "A & B (G+17), C (G+14), D (Clubhouse)" },
+                                { label: "Development", value: "5.37 Acres | 660 Units" }
+                            ].map((item, idx) => (
+                                <div key={idx} className="flex items-center gap-3 group">
+                                    <div className="w-5 h-5 rounded-full bg-gold flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
+                                    <p className="font-body text-[15px] text-luxury-black font-medium tracking-wide">
+                                        <span className="text-luxury-text font-normal opacity-80">{item.label}:</span> {item.value}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* CTA Buttons */}
+                        <div className="flex">
+                            <button 
+                                onClick={() => setIsModalOpen(true)} 
+                                className="bg-gold text-white font-body px-10 py-3.5 text-[13px] uppercase tracking-[0.2em] hover:bg-luxury-black transition-all duration-500 shadow-2xl hover:-translate-y-1 active:translate-y-0"
+                            >
+                                Contact Us
+                            </button>
                         </div>
                     </div>
 

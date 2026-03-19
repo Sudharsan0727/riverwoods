@@ -26,8 +26,8 @@ export const submitLead = (formData) => {
     mobile: cleanMobile,
     email,
     source: urlParams.get('utm_source') || "Web",
-    project: "Radiance Eternity",
-    subSource: urlParams.get('utm_medium') || "Google_LP_RE",
+    project: "Radiance Solitaire",
+    subSource: urlParams.get('utm_medium') || "Google_LP_RS",
     medium: urlParams.get('utm_campaign') || "CPC", // Matches image example
     propertyType: "Apartment",
     city: "Chennai",
@@ -50,7 +50,7 @@ export const submitLead = (formData) => {
     utm_source: urlParams.get('utm_source') || "",
   };
 
-  const salesforceUrl = "https://radiancerealty--partial.sandbox.my.salesforce-sites.com/extrenalsource/services/apexrest/createLead";
+  const salesforceUrl = "https://radiancerealty.my.salesforce-sites.com/LeadService/services/apexrest/createLead";
 
   // Trigger Salesforce API (Background)
   fetch(salesforceUrl, {
@@ -68,7 +68,7 @@ export const submitLead = (formData) => {
           fullName,
           email,
           mobile,
-          project: "Radiance Eternity"
+          project: "Radiance Solitaire"
       }),
       keepalive: true
   }).catch(err => console.error("Email Error:", err));

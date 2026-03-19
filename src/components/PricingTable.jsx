@@ -49,7 +49,7 @@ const PricingTable = () => {
                                 Built up area
                             </div>
                             <div className="py-3 md:py-4 text-center font-normal text-[10px] md:text-lg tracking-widest uppercase">
-                                Price
+                                Unit Plan
                             </div>
                         </div>
 
@@ -71,10 +71,10 @@ const PricingTable = () => {
                                             onClick={() => setIsModalOpen(true)}
                                             className="btn-gold !py-2 !px-2 md:!py-3 md:!px-6 !text-[9px] md:!text-xs !shadow-none hover:!translate-y-0 transition-all duration-300 flex items-center gap-1 md:gap-2"
                                         >
-                                            <svg className="hidden md:block w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-                                                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
+                                            <svg className="hidden md:block w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v13m0 0l-4-4m4 4l4-4M3 20h18" />
                                             </svg>
-                                            View pricing
+                                            Download Unit Plan
                                         </button>
                                     </div>
                                 </div>

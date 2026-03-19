@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import eternityLogo from '../assets/img/Radiane1.png';
+import solitaireLogo from '../assets/img/sollitare_logo.svg';
 import whiteLogo from '../assets/img/eternity-logo-white.svg';
 import EnquiryModal from './EnquiryModal';
 
@@ -23,8 +23,8 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className={`transition-all duration-500 ${isScrolled ? 'w-32 md:w-44' : 'w-40 md:w-56'}`}>
           <img
-            src={eternityLogo}
-            alt="Radiant Logo"
+            src={solitaireLogo}
+            alt="Solitaire Logo"
             className="w-full transition-all duration-500 object-contain"
           />
         </Link>

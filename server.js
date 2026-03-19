@@ -16,8 +16,8 @@ const transporter = nodemailer.createTransport({
     port: 465,
     secure: true, // SSL
     auth: {
-        user: 'sudharsan0727@gmail.com',
-        pass: 'awtuyrltoafwykim'
+        user: 'radiancewebenquiry@gmail.com',
+        pass: 'dyikvighetnksywt'
     }
 });
 
@@ -27,8 +27,8 @@ app.post('/send-email', (req, res) => {
     const { fullName, email, mobile, project } = req.body;
 
     const mailOptions = {
-        from: '"Radiance Eternity Website" <sudharsan0727@gmail.com>',
-        to: 'karthik@radiancerealty.in',
+        from: '"Radiance Eternity Website" <radiancewebenquiry@gmail.com>',
+        to: 'radiancewebenquiry@gmail.com',
         subject: `New Lead Enquiry - ${fullName}`,
         html: `
             <!DOCTYPE html>

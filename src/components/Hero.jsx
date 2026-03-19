@@ -49,7 +49,7 @@ const Hero = () => {
       <div className="hidden lg:block lg:absolute lg:inset-0 lg:h-full z-0">
         <img 
           src={heroBg} 
-          alt="Radiance Eternity" 
+          alt="Radiance Solitaire" 
           className="w-full h-full object-cover"
           fetchPriority="high"
           loading="eager"
@@ -61,7 +61,7 @@ const Hero = () => {
       <div className="lg:hidden w-full relative z-0 mt-0 overflow-hidden shadow-sm">
         <img 
           src={heroMobileBg} 
-          alt="Radiance Eternity Banner" 
+          alt="Radiance Solitaire Banner" 
           className="w-full h-auto block"
           fetchPriority="high"
           loading="eager"

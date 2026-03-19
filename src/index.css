@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&family=Urbanist:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100..900;1,100..900&family=Barlow+Condensed:ital,wght@0,100..900;1,100..900&family=Gilda+Display&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-heading: "Gilda Display", serif;
-  --font-body: "Gilda Display", serif;
+  --font-body: "Barlow", sans-serif;
+  --font-condensed: "Barlow Condensed", sans-serif;
   
-  --color-gold: #9b7a44;
+  --color-gold: #aa8453;
   --color-gold-dark: #a67f59;
   --color-luxury-black: #222222;
   --color-luxury-gray: #fffdfb;
@@ -50,7 +51,7 @@ textarea:focus::placeholder {
 /* Custom Utilities */
 @layer components {
   .btn-gold {
-    @apply relative px-8 py-4 bg-gold text-white font-medium overflow-hidden uppercase tracking-[0.2em] text-xs inline-block cursor-pointer active:translate-y-0.5;
+    @apply relative px-8 py-4 bg-gold text-white font-medium overflow-hidden uppercase tracking-[0.15em] text-[10px] inline-block cursor-pointer active:translate-y-0.5;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 10px 30px rgba(190, 152, 116, 0.2);
   }
@@ -92,6 +93,52 @@ textarea:focus::placeholder {
   }
 
   .btn-gold:hover::after {
+    left: 150%;
+  }
+
+  .btn-gray {
+    @apply relative px-8 py-4 bg-[#6d6d6d] text-white font-medium overflow-hidden uppercase tracking-[0.15em] text-[10px] inline-block cursor-pointer active:translate-y-0.5;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-gray::before {
+    content: '';
+    @apply absolute inset-0 bg-gold -z-1;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+
+  .btn-gray:hover {
+    @apply text-white -translate-y-1;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-gray:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* Smooth Shine effect for gray btn */
+  .btn-gray::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 150%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+
+  .btn-gray:hover::after {
     left: 150%;
   }
   
