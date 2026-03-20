@@ -9,56 +9,48 @@ const ProjectHighlights = () => {
 
     const amenities = [
         {
-            title: "3 & 4 BHKs have zero wall sharing",
+            title: "Superior fixtures & Top of the line Specification",
             icon: (
                 <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" strokeWidth="1" viewBox="0 0 24 24">
-                    <rect x="3" y="3" width="7" height="18" rx="1"/>
-                    <rect x="14" y="3" width="7" height="18" rx="1"/>
+                    <path d="M5 21l.5-5.5L18 3l3 3L8.5 18.5 3 19l2 2z" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M15 6l3 3" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
             )
         },
         {
-            title: "Each 4 BHK is designed with a private lift & lobby",
+            title: "100% Vastu Compliance",
             icon: (
-                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                    <rect x="5" y="3" width="14" height="18" rx="2" ry="2" />
-                    <path d="M12 7v10" />
-                    <path d="M9 10l3-3 3 3" />
-                    <path d="M15 14l-3 3-3-3" />
+                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" strokeWidth="1" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 3v3m0 12v3M3 12h3m12 0h3m-14.12-6.12l2.12 2.12m9.9 9.9l2.12 2.12M6.88 17.12l-2.12 2.12m14.24-14.24l-2.12 2.12" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
             )
         },
         {
-            title: "All bedrooms have cross ventilation",
+            title: "70% Open Space Across the Project",
             icon: (
-                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                    <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>
+                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" strokeWidth="1" viewBox="0 0 24 24">
+                    <path d="M12 19V5M5 12h14" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 19c-3.866 0-7-3.134-7-7s3.134-7 7-7 7 3.134 7 7-3.134 7-7 7z" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
             )
         },
         {
-            title: "All units have direct ventilation",
+            title: "Covered car park for all the units",
             icon: (
-                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="4"/>
-                    <path d="M12 2v2"/>
-                    <path d="M12 20v2"/>
-                    <path d="M5 5l1.5 1.5"/>
-                    <path d="M17.5 17.5L19 19"/>
-                    <path d="M2 12h2"/>
-                    <path d="M20 12h2"/>
-                    <path d="M5 19l1.5-1.5"/>
-                    <path d="M17.5 6.5L19 5"/>
+                <svg className="w-10 h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" strokeWidth="1" viewBox="0 0 24 24">
+                    <path d="M7 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm10 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M5 17h2m10 0h2m-14 0V9a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8M9 7l1-3h4l1 3" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
             )
         },
     ];
 
     return (
-        <section id="highlights" className="section-padding bg-[#fff1f2] relative overflow-hidden">
+        <section id="highlights" className="section-padding bg-[#f8f5f0] relative overflow-hidden">
             {/* Background Texture/Pattern */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none select-none">
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#9E212A_1px,transparent_1px)] [background-size:40px_40px]"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#B57C3C_1px,transparent_1px)] [background-size:40px_40px]"></div>
             </div>
 
             <div className="lux-container relative z-10">
@@ -83,7 +75,7 @@ const ProjectHighlights = () => {
                     {amenities.map((item, index) => (
                         <div 
                             key={index} 
-                            className="group bg-white rounded-[4px] min-h-[200px] p-6 lg:p-8 flex flex-col items-center justify-center text-center transition-all duration-500 hover:bg-[#9E212A] hover:-translate-y-2 cursor-pointer shadow-sm animate-fade-up animate-delay-1"
+                            className="group bg-white rounded-[4px] min-h-[200px] p-6 lg:p-8 flex flex-col items-center justify-center text-center transition-all duration-500 hover:bg-[#B57C3C] hover:-translate-y-2 cursor-pointer shadow-sm animate-fade-up animate-delay-1"
                         >
                             <div className="flex flex-col items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
                                 {/* Icon matching Amenities style */}

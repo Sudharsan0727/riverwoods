@@ -1,50 +1,23 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 
-import img1 from '../assets/img/platinum/1 (1).jpg';
-import img2 from '../assets/img/platinum/1 (2).jpg';
-import img3 from '../assets/img/platinum/1 (3).jpg';
-import img4 from '../assets/img/platinum/1 (4).jpg';
-import img5 from '../assets/img/platinum/1 (5).jpg';
-import img6 from '../assets/img/platinum/1 (6).jpg';
-import img7 from '../assets/img/platinum/1 (7).jpg';
-import img8 from '../assets/img/platinum/1 (8).jpg';
-import img9 from '../assets/img/platinum/1 (9).jpg';
-import img10 from '../assets/img/platinum/2 (1).jpg';
-import img11 from '../assets/img/platinum/2 (2).jpg';
-import img12 from '../assets/img/platinum/2 (3).jpg';
-import img13 from '../assets/img/platinum/2 (4).jpg';
-import img14 from '../assets/img/platinum/2 (5).jpg';
-import img15 from '../assets/img/platinum/2 (6).jpg';
-import img16 from '../assets/img/platinum/2 (7).jpg';
-import img17 from '../assets/img/platinum/2 (8).jpg';
-import img18 from '../assets/img/platinum/2 (9).jpg';
-import img19 from '../assets/img/platinum/Cam_21.jpg';
+import img1 from '../assets/img/platinum/Bedroom Cam.jpg';
+import img2 from '../assets/img/platinum/Cam_02_Day.jpg';
+import img3 from '../assets/img/platinum/Cam_02_Night.jpg';
+import img4 from '../assets/img/platinum/Cam_03.jpg';
+import img5 from '../assets/img/platinum/Cam_04.jpg';
+import img6 from '../assets/img/platinum/Cam_07.jpg';
+import img7 from '../assets/img/platinum/Cam_11 Twilight.jpg';
+import img8 from '../assets/img/platinum/Living Cam.jpg';
 
 const slides = [
-    // 1. BUILDING ELEVATION (ARCHITECTURE)
-    { id: 1, img: img1, title: "Building Exterior", tag: "ARCHITECTURE" },
-    { id: 2, img: img2, title: "Modern Design", tag: "ARCHITECTURE" },
-    { id: 19, img: img19, title: "Project View", tag: "ARCHITECTURE" },
-    { id: 4, img: img4, title: "Grand Entrance", tag: "ARCHITECTURE" },
-
-    // 2. PROJECT INTERIORS
-    { id: 5, img: img5, title: "Luxury Living", tag: "INTERIORS" },
-    { id: 6, img: img6, title: "Modern Interior", tag: "INTERIORS" },
-    { id: 7, img: img7, title: "Spacious Rooms", tag: "INTERIORS" },
-    { id: 8, img: img8, title: "Dining Space", tag: "INTERIORS" },
-    { id: 9, img: img9, title: "Elegant Hall", tag: "INTERIORS" },
-    { id: 10, img: img10, title: "Premium Suite", tag: "INTERIORS" },
-    { id: 11, img: img11, title: "Cozy Bedroom", tag: "INTERIORS" },
-    { id: 12, img: img12, title: "Master Suite", tag: "INTERIORS" },
-    { id: 13, img: img13, title: "Kitchen area", tag: "INTERIORS" },
-    { id: 15, img: img15, title: "Interior view", tag: "INTERIORS" },
-
-    // 3. AMENITIES & LIFESTYLE
-    { id: 16, img: img16, title: "Amenity view", tag: "AMENITIES" },
-    { id: 17, img: img17, title: "Clubhouse", tag: "AMENITIES" },
-    { id: 18, img: img18, title: "Entertainment", tag: "AMENITIES" },
-    { id: 3, img: img3, title: "Landscaped Areas", tag: "LIFESTYLE" },
-    { id: 14, img: img14, title: "Premium Living", tag: "LIFESTYLE" },
+    { id: 1, img: img8, title: "Spacious Living", tag: "INTERIORS" },
+    { id: 2, img: img1, title: "Luxury Bedroom", tag: "INTERIORS" },
+    { id: 3, img: img4, title: "Grand Entrance", tag: "ARCHITECTURE" },
+    { id: 4, img: img3, title: "Night View", tag: "ARCHITECTURE" },
+    { id: 5, img: img2, title: "Day View", tag: "ARCHITECTURE" },
+    { id: 6, img: img5, title: "Modern Design", tag: "ARCHITECTURE" },
+    { id: 7, img: img6, title: "Building Exterior", tag: "ARCHITECTURE" },
+    { id: 8, img: img7, title: "Twilight Glow", tag: "ARCHITECTURE" },
 ];
 
 const Gallery = () => {
@@ -52,6 +25,13 @@ const Gallery = () => {
     const [animating, setAnimating] = useState(false);
     const thumbRef = useRef(null);
     const isInitialMount = useRef(true);
+
+    // Reset current if it goes out of bounds (e.g., after HMR reduces slide count)
+    useEffect(() => {
+        if (current >= slides.length) {
+            setCurrent(0);
+        }
+    }, [slides.length, current]);
 
     // Sync thumbnail scroll (Safer way that doesn't jump the whole page)
     useEffect(() => {

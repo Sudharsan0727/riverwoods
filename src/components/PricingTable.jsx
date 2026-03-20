@@ -9,12 +9,20 @@ const PricingTable = () => {
 
     const pricingData = [
         {
-            unitType: "3 BHK Apartments",
-            area: "2296 Sq.ft. - 2315 Sq.ft.",
+            unitType: "1BHK + 1T",
+            area: "696 - 711 Sq.ft.",
         },
         {
-            unitType: "4 BHK Apartments (B+S+13)",
-            area: "3056 Sq.ft. - 3064 Sq.ft.",
+            unitType: "2BHK + 2T",
+            area: "1062 - 1160 Sq.ft",
+        },
+        {
+            unitType: "3BHK + 2T",
+            area: "1388 - 1411 Sq.ft.",
+        },
+        {
+            unitType: "3BHK + 3T",
+            area: "1525 - 1560 Sq.ft.",
         }
     ];
 
@@ -33,7 +41,7 @@ const PricingTable = () => {
                 <div className="max-w-[70rem] mx-auto animate-fade-up animate-delay-1 overflow-x-auto hide-scroll">
                     <div className="min-w-[320px] md:min-w-[800px] border border-gray-200">
                         {/* Table Header */}
-                        <div className="grid grid-cols-3 bg-[#9E212A] text-white">
+                        <div className="grid grid-cols-3 bg-[#B57C3C] text-white">
                             <div className="py-4 md:py-5 text-center font-normal text-[16px] md:text-lg border-r border-white/20 tracking-widest uppercase">
                                 Unit Type
                             </div>

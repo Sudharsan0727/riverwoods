@@ -43,7 +43,7 @@ const HomePage = () => {
         <AmenitiesIconGrid />
         <LocationHighlights />
         <Gallery />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <EnquirySection />
       </main>
       <Footer />

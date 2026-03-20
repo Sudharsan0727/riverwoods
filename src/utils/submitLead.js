@@ -26,12 +26,12 @@ export const submitLead = (formData) => {
     mobile: cleanMobile,
     email,
     source: urlParams.get('utm_source') || "Web",
-    project: "Radiance Platinum",
+    project: "Radiance Riverwoods",
     subSource: urlParams.get('utm_medium') || "Google_LP_RP",
     medium: urlParams.get('utm_campaign') || "CPC", // Matches image example
     propertyType: "Apartment",
-    city: "Chennai",
-    location: "Chennai",
+    city: "Coimbatore",
+    location: "Coimbatore",
     // All UTM Parameters as per document
     utm_adgroup: urlParams.get('utm_adgroup') || "",
     utm_adgroupid: urlParams.get('utm_adgroupid') || "",

@@ -54,7 +54,7 @@ const Testimonials = () => {
     const active = testimonials[current];
 
     return (
-        <section className="section-padding bg-[#fff1f2] overflow-hidden">
+        <section className="section-padding bg-[#f8f5f0] overflow-hidden">
             <div className="lux-container">
 
                 {/* Header */}

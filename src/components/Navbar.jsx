@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/img/platinum_logo.svg';
-import whiteLogo from '../assets/img/eternity-logo-white.svg';
+import logo from '../assets/img/riverwoods_logo.svg';
+
 import EnquiryModal from './EnquiryModal';
 
 const Navbar = () => {
@@ -24,7 +24,7 @@ const Navbar = () => {
         <Link to="/" className={`transition-all duration-500 ${isScrolled ? 'w-32 md:w-44' : 'w-40 md:w-56'}`}>
           <img
             src={logo}
-            alt="Radiance Platinum Logo"
+            alt="Radiance Riverwoods Logo"
             className="w-full transition-all duration-500 object-contain"
           />
         </Link>

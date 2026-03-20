@@ -114,7 +114,7 @@ const EnquirySection = () => {
                             Start Your <br /> <span className="text-gold italic">Property Journey</span>
                         </h2>
 
-                        <div className="bg-[#fff1f2] p-8 md:p-10 rounded-sm shadow-sm border border-luxury-gray/30">
+                        <div className="bg-[#f8f5f0] p-8 md:p-10 rounded-sm shadow-sm border border-luxury-gray/30">
                             <form className="space-y-6" onSubmit={handleSubmit}>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>

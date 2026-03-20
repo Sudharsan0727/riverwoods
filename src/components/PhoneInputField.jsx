@@ -39,7 +39,7 @@ const PhoneInputField = ({ value, onChange, theme = 'dark', placeholder = "Phone
                 inputProps={{
                     required: required,
                 }}
-                inputClass={`!w-full !text-sm !transition-colors focus:!outline-none focus:!border-[#9E212A] focus:!shadow-none ${
+                inputClass={`!w-full !text-sm !transition-colors focus:!outline-none focus:!border-[#B57C3C] focus:!shadow-none ${
                     isModal ? '!rounded !border-gray-200 !bg-white !text-[#222222] !h-[46px] placeholder:!text-[#9ca3af]' : '!rounded-none'
                 } ${
                     isDark && !isModal
@@ -49,7 +49,7 @@ const PhoneInputField = ({ value, onChange, theme = 'dark', placeholder = "Phone
                 buttonClass={`!border-r-0 !bg-transparent ${isModal ? '!rounded-l !border-gray-200 hover:!bg-gray-50' : '!rounded-none'} ${
                     isDark && !isModal
                         ? '!border-white/20 hover:!bg-white/10'
-                        : !isModal ? '!border-[#fffdfb] hover:!bg-[#fff1f2]' : ''
+                        : !isModal ? '!border-[#fffdfb] hover:!bg-[#f8f5f0]' : ''
                 }`}
                 dropdownClass="!rounded-none !text-sm !bg-white !text-[#222222] !border-[#fffdfb]"
                 searchClass="!rounded-none !text-sm !w-[90%] !ml-2 !bg-white !text-[#222222] !border-[#fffdfb]"

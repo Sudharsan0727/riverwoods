@@ -27,7 +27,7 @@ app.post('/send-email', (req, res) => {
     const { fullName, email, mobile, project } = req.body;
 
     const mailOptions = {
-        from: '"Radiance Eternity Website" <radiancewebenquiry@gmail.com>',
+        from: '"Radiance Riverwoods Website" <radiancewebenquiry@gmail.com>',
         to: 'radiancewebenquiry@gmail.com',
         subject: `New Lead Enquiry - ${fullName}`,
         html: `
@@ -52,7 +52,7 @@ app.post('/send-email', (req, res) => {
             <body>
                 <div class="email-container">
                     <div class="header">
-                        <h1>RADIANCE ETERNITY</h1>
+                        <h1>RADIANCE RIVERWOODS</h1>
                     </div>
                     <div class="content">
                         <h2>New Lead Notification</h2>
@@ -80,7 +80,7 @@ app.post('/send-email', (req, res) => {
                         <p style="margin-top: 30px;">Please follow up with the lead at the earliest convenience.</p>
                     </div>
                     <div class="footer">
-                        <p>This is an automated notification from <span class="brand-name">Radiance Eternity</span> Website.</p>
+                        <p>This is an automated notification from <span class="brand-name">Radiance Riverwoods</span> Website.</p>
                         <p>&copy; ${new Date().getFullYear()} Radiance Realty. All Rights Reserved.</p>
                     </div>
                 </div>
