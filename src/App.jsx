@@ -53,7 +53,7 @@ const HomePage = () => {
 
 function App() {
   return (
-    <Router basename="/">
+    <Router basename="/riverwoods/">
       <div className="min-h-screen bg-white">
         <Routes>
           <Route path="/" element={<HomePage />} />
