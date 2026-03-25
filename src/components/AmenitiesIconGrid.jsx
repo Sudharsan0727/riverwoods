@@ -69,14 +69,14 @@ const AmenitiesIconGrid = () => {
                             Curated Lifestyle
                         </span>
                         <h2 className="text-[36px] md:text-[42px] font-heading leading-tight text-luxury-black mb-6">
-                            Exceptional <span className="text-[#B57C3C] italic">Amenities</span>
+                            Exceptional <span className="text-[#002A22] italic">Amenities</span>
                         </h2>
                         <p className="font-body text-[16px] text-gray-400 mb-8 leading-relaxed max-w-sm mx-auto lg:mx-0">
                             A focused collection of premium lifestyle features designed to enhance your everyday wellness.
                         </p>
                         <button 
                             onClick={() => setIsModalOpen(true)}
-                            className="inline-flex items-center gap-2 text-[#B57C3C] hover:text-luxury-black font-bold uppercase tracking-widest text-[12px] transition-all duration-300 group"
+                            className="inline-flex items-center gap-2 text-[#002A22] hover:text-luxury-black font-bold uppercase tracking-widest text-[12px] transition-all duration-300 group"
                         >
                             <span>Explore Features</span>
                             <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,10 +92,10 @@ const AmenitiesIconGrid = () => {
                                 key={index}
                                 className="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 flex flex-col items-center justify-center text-center border border-gray-50 hover:border-gold/20"
                             >
-                                <div className="w-16 h-16 rounded-2xl bg-[#faf9f8] flex items-center justify-center text-gold group-hover:bg-[#B57C3C] group-hover:text-white transition-all duration-500 mb-5">
+                                <div className="w-16 h-16 rounded-2xl bg-[#faf9f8] flex items-center justify-center text-gold group-hover:bg-[#002A22] group-hover:text-white transition-all duration-500 mb-5">
                                     {item.icon}
                                 </div>
-                                <h4 className="text-[14px] md:text-[15px] font-heading font-bold text-luxury-black group-hover:text-[#B57C3C] transition-colors duration-300 uppercase tracking-widest">
+                                <h4 className="text-[14px] md:text-[15px] font-heading font-bold text-luxury-black group-hover:text-[#002A22] transition-colors duration-300 uppercase tracking-widest">
                                     {item.title}
                                 </h4>
                             </div>

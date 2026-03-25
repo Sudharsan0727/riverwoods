@@ -46,14 +46,14 @@ const AboutUs = () => {
 
                         {/* Design Accents */}
                         <div className="absolute top-1/4 -left-8 w-24 h-24 border border-gold/40 rounded-full animate-[spin_10s_linear_infinite] pointer-events-none z-0 hidden md:block"></div>
-                        <div className="absolute -top-10 -left-10 w-40 h-40 bg-[radial-gradient(#B57C3C_2px,transparent_2px)] [background-size:16px_16px] opacity-20 z-0 pointer-events-none hidden md:block"></div>
+                        <div className="absolute -top-10 -left-10 w-40 h-40 bg-[radial-gradient(#002A22_2px,transparent_2px)] [background-size:16px_16px] opacity-20 z-0 pointer-events-none hidden md:block"></div>
                     </div>
 
                     {/* Right: Content Section */}
                     <div className="w-full lg:w-7/12 lg:pl-16 xl:pl-28 mt-8 lg:mt-0 relative z-30">
                         <div className="animate-fade-up">
                             <div className="flex items-center gap-4 mb-6">
-                                <div className="h-[2px] w-12 bg-[#B57C3C]"></div>
+                                <div className="h-[2px] w-12 bg-[#002A22]"></div>
                                 <span className="font-condensed text-gold uppercase tracking-[0.25em] text-[13px] font-bold block">
                                     ABOUT RIVERWOODS
                                 </span>
@@ -61,7 +61,7 @@ const AboutUs = () => {
                             
                             <h2 className="text-[36px] md:text-[48px] lg:text-[52px] font-heading font-bold mb-8 leading-[1.1] text-luxury-black">
                                 Nature’s Calm, <br />
-                                <span className="text-[#B57C3C] italic relative inline-block">
+                                <span className="text-[#002A22] italic relative inline-block">
                                     Urban Comfort
                                     <span className="absolute bottom-1 left-0 w-full h-[6px] bg-gold/20 -z-10"></span>
                                 </span>
@@ -80,7 +80,7 @@ const AboutUs = () => {
                                 { title: "Development Size", value: "3 Acres | 377 Apartments" },
                                 { title: "Location", value: "Perur Main Road, Coimbatore" }
                             ].map((item, idx) => (
-                                <div key={idx} className="group cursor-default relative pl-4 border-l-2 border-transparent hover:border-[#B57C3C] transition-colors duration-300">
+                                <div key={idx} className="group cursor-default relative pl-4 border-l-2 border-transparent hover:border-[#002A22] transition-colors duration-300">
                                     <span className="text-[11px] md:text-[12px] text-luxury-black uppercase tracking-[0.2em] block mb-1.5 font-bold font-sans transition-colors">{item.title}</span>
                                     <span className="text-[15px] md:text-[16px] text-luxury-black font-medium block">{item.value}</span>
                                 </div>
@@ -91,7 +91,7 @@ const AboutUs = () => {
                         <div className="flex flex-col sm:flex-row items-center gap-6 animate-fade-up animate-delay-2 mb-10">
                             <button 
                                 onClick={() => setIsModalOpen(true)} 
-                                className="bg-[#B57C3C] text-white flex items-center justify-center gap-2 py-4 px-8 text-[13px] font-heading tracking-widest hover:bg-[#7e1921] hover:-translate-y-1 hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                                className="bg-[#002A22] text-white flex items-center justify-center gap-2 py-4 px-8 text-[13px] font-heading tracking-widest hover:bg-[#001a15] hover:-translate-y-1 hover:shadow-xl transition-all duration-300 w-full sm:w-auto whitespace-nowrap"
                             >
                                 <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -101,14 +101,12 @@ const AboutUs = () => {
                             
                             <button 
                                 onClick={() => setIsModalOpen(true)} 
-                                className="group flex items-center gap-3 text-luxury-black hover:text-[#B57C3C] font-bold uppercase tracking-widest text-[12px] md:text-[13px] transition-colors"
+                                className="bg-[#6d6d6d] text-white flex items-center justify-center gap-2 py-4 px-8 text-[13px] font-heading tracking-widest hover:bg-[#4a4a4a] hover:-translate-y-1 hover:shadow-xl transition-all duration-300 w-full sm:w-auto uppercase whitespace-nowrap"
                             >
-                                <span className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-[#B57C3C] group-hover:bg-[#B57C3C] group-hover:text-white transition-all duration-300">
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                                        <path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                </span>
-                                Payment Schedule
+                                <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                <span>DOWNLOAD PAYMENT SCHEDULE</span>
                             </button>
                         </div>
                         

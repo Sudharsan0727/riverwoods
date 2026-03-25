@@ -73,7 +73,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Form Side: Below image on mobile */}
           <div className="lg:col-span-5 lg:col-start-8">
-            <div className="bg-[#B57C3C] lg:bg-white p-6 md:p-8 rounded-sm relative z-10 shadow-xl lg:shadow-2xl border border-gold/20 lg:border-none mx-auto max-w-lg lg:max-w-none">
+            <div className="bg-[#002A22] lg:bg-white p-6 md:p-8 rounded-sm relative z-10 shadow-xl lg:shadow-2xl border border-gold/20 lg:border-none mx-auto max-w-lg lg:max-w-none">
               <h3 className="text-2xl font-heading text-white lg:text-luxury-black mb-6 text-center italic">Enquiry Now</h3>
               <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
@@ -112,7 +112,7 @@ const Hero = () => {
                 <button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className={`w-full bg-white text-[#B57C3C] lg:bg-[#B57C3C] lg:text-white lg:btn-gold font-bold uppercase tracking-widest py-3 text-xs lg:!py-3 shadow-xl mt-2 transition-all hover:bg-white/90 lg:hover:bg-gold-dark ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  className={`w-full bg-white text-[#002A22] lg:bg-[#002A22] lg:text-white lg:btn-gold font-bold uppercase tracking-widest py-3 text-xs lg:!py-3 shadow-xl mt-2 transition-all hover:bg-white/90 lg:hover:bg-gold-dark ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit'}
                 </button>

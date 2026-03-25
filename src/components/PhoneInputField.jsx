@@ -39,7 +39,7 @@ const PhoneInputField = ({ value, onChange, theme = 'dark', placeholder = "Phone
                 inputProps={{
                     required: required,
                 }}
-                inputClass={`!w-full !text-sm !transition-colors focus:!outline-none focus:!border-[#B57C3C] focus:!shadow-none ${
+                inputClass={`!w-full !text-sm !transition-colors focus:!outline-none focus:!border-[#002A22] focus:!shadow-none ${
                     isModal ? '!rounded !border-gray-200 !bg-white !text-[#222222] !h-[46px] placeholder:!text-[#9ca3af]' : '!rounded-none'
                 } ${
                     isDark && !isModal

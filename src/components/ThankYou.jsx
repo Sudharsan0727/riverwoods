@@ -75,7 +75,7 @@ const ThankYou = () => {
                             href="https://www.youtube.com/watch?v=AKVrvOVASz0" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="group bg-[#f8f5f0] p-8 rounded-sm border border-gray-100 transition-all duration-500 hover:bg-[#B57C3C] hover:-translate-y-2 cursor-pointer shadow-sm flex flex-col items-center no-underline"
+                            className="group bg-[#f8f5f0] p-8 rounded-sm border border-gray-100 transition-all duration-500 hover:bg-[#002A22] hover:-translate-y-2 cursor-pointer shadow-sm flex flex-col items-center no-underline"
                         >
                             <div className="text-gold group-hover:text-white transition-colors duration-500 mb-6 flex justify-center">
                                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -99,7 +99,7 @@ const ThankYou = () => {
                             href="https://www.youtube.com/watch?v=Fut9aw5cJ0M&t=124s" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="group bg-[#f8f5f0] p-8 rounded-sm border border-gray-100 transition-all duration-500 hover:bg-[#B57C3C] hover:-translate-y-2 cursor-pointer shadow-sm flex flex-col items-center no-underline"
+                            className="group bg-[#f8f5f0] p-8 rounded-sm border border-gray-100 transition-all duration-500 hover:bg-[#002A22] hover:-translate-y-2 cursor-pointer shadow-sm flex flex-col items-center no-underline"
                         >
                             <div className="text-gold group-hover:text-white transition-colors duration-500 mb-6 flex justify-center">
                                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -121,7 +121,7 @@ const ThankYou = () => {
                         {/* Download Brochure */}
                         <button 
                             onClick={handleDownload}
-                            className="group bg-[#f8f5f0] p-8 rounded-sm border border-gray-100 transition-all duration-500 hover:bg-[#B57C3C] hover:-translate-y-2 cursor-pointer shadow-sm flex flex-col items-center no-underline w-full"
+                            className="group bg-[#f8f5f0] p-8 rounded-sm border border-gray-100 transition-all duration-500 hover:bg-[#002A22] hover:-translate-y-2 cursor-pointer shadow-sm flex flex-col items-center no-underline w-full"
                         >
                             <div className="text-gold group-hover:text-white transition-colors duration-500 mb-6 flex justify-center">
                                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">

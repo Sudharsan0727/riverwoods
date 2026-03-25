@@ -41,7 +41,7 @@ const PricingTable = () => {
                 <div className="max-w-[70rem] mx-auto animate-fade-up animate-delay-1 overflow-x-auto hide-scroll">
                     <div className="min-w-[320px] md:min-w-[800px] border border-gray-200">
                         {/* Table Header */}
-                        <div className="grid grid-cols-3 bg-[#B57C3C] text-white">
+                        <div className="grid grid-cols-3 bg-[#002A22] text-white">
                             <div className="py-4 md:py-5 text-center font-normal text-[16px] md:text-lg border-r border-white/20 tracking-widest uppercase">
                                 Unit Type
                             </div>
