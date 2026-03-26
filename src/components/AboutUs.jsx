@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import EnquiryModal from './EnquiryModal';
 import about1 from '../assets/img/platinum/Cam_07.jpg';
 import about2 from '../assets/img/platinum/Living Cam.jpg';
-import reraLogo from '../assets/img/platinum_Rera.png';
+import reraLogo from '../assets/img/riverwoods_Rera.png';
 
 const AboutUs = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -55,7 +55,7 @@ const AboutUs = () => {
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="h-[2px] w-12 bg-[#002A22]"></div>
                                 <span className="font-condensed text-gold uppercase tracking-[0.25em] text-[13px] font-bold block">
-                                    ABOUT RIVERWOODS
+                                    ABOUT RADIANCE RIVERWOODS
                                 </span>
                             </div>
                             
@@ -87,13 +87,22 @@ const AboutUs = () => {
                             ))}
                         </div>
 
+                        {/* RERA Badge Above Buttons */}
+                        <div className="animate-fade-up animate-delay-2 flex items-center mb-8">
+                            <img 
+                                src={reraLogo} 
+                                alt="RERA Registered" 
+                                className="h-20 object-contain transition-all duration-500 hover:scale-105" 
+                            />
+                        </div>
+
                         {/* Actions */}
-                        <div className="flex flex-col sm:flex-row items-center gap-6 animate-fade-up animate-delay-2 mb-10">
+                        <div className="flex flex-row items-stretch gap-2 animate-fade-up animate-delay-3">
                             <button 
                                 onClick={() => setIsModalOpen(true)} 
-                                className="bg-[#002A22] text-white flex items-center justify-center gap-2 py-4 px-8 text-[13px] font-heading tracking-widest hover:bg-[#001a15] hover:-translate-y-1 hover:shadow-xl transition-all duration-300 w-full sm:w-auto whitespace-nowrap"
+                                className="bg-[#002A22] text-white flex-1 flex items-center justify-center gap-1.5 py-4 px-2 text-[8.5px] sm:text-[13px] font-heading tracking-tight sm:tracking-widest hover:bg-[#001a15] hover:-translate-y-1 hover:shadow-xl transition-all duration-300 uppercase whitespace-nowrap"
                             >
-                                <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                 </svg>
                                 <span>DOWNLOAD BROCHURE</span>
@@ -101,22 +110,13 @@ const AboutUs = () => {
                             
                             <button 
                                 onClick={() => setIsModalOpen(true)} 
-                                className="bg-[#6d6d6d] text-white flex items-center justify-center gap-2 py-4 px-8 text-[13px] font-heading tracking-widest hover:bg-[#4a4a4a] hover:-translate-y-1 hover:shadow-xl transition-all duration-300 w-full sm:w-auto uppercase whitespace-nowrap"
+                                className="bg-[#6d6d6d] text-white flex-1 flex items-center justify-center gap-1.5 py-4 px-2 text-[8.5px] sm:text-[13px] font-heading tracking-tight sm:tracking-widest hover:bg-[#4a4a4a] hover:-translate-y-1 hover:shadow-xl transition-all duration-300 uppercase whitespace-nowrap"
                             >
-                                <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                 </svg>
                                 <span>DOWNLOAD PAYMENT SCHEDULE</span>
                             </button>
-                        </div>
-                        
-                        {/* RERA */}
-                        <div className="animate-fade-up animate-delay-3 flex items-center border-t border-gray-100 pt-8">
-                            <img 
-                                src={reraLogo} 
-                                alt="RERA Registered" 
-                                className="h-16 object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500" 
-                            />
                         </div>
                     </div>
 

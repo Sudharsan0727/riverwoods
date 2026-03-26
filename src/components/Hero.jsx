@@ -44,7 +44,7 @@ const Hero = () => {
 
 
   return (
-    <section id="home" className="relative flex flex-col lg:block h-auto lg:h-[90vh] 2xl:h-[95vh] pt-[72px] lg:pt-0 overflow-hidden bg-[#f8f5f0] lg:bg-white">      {/* Background Image - Desktop */}
+    <section id="home" className="relative flex flex-col lg:block h-auto lg:h-[90vh] 2xl:h-[95vh] pt-[56px] lg:pt-0 overflow-hidden bg-white">      {/* Background Image - Desktop */}
       <div className="hidden lg:block lg:absolute lg:inset-0 lg:h-full z-0">
         <img 
           src={heroBg} 

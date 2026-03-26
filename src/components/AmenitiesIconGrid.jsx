@@ -9,7 +9,7 @@ const AmenitiesIconGrid = () => {
             title: "Swimming Pool",
             icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2 15c2-1 3-1 5 0s3 1 5 0 3-1 5 0 3 1 5 0m-18 3c2-1 3-1 5 0s3 1 5 0 3-1 5 0 3 1 5 0" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M22 20a2.42 2.42 0 0 0-1.89-.9 2.42 2.42 0 0 0-1.99.92 2.42 2.42 0 0 1-1.89.9 2.42 2.42 0 0 1-1.91-.9 2.42 2.42 0 0 0-1.89-.92 2.42 2.42 0 0 0-1.89.92 2.42 2.42 0 0 1-1.89.9 2.42 2.42 0 0 1-1.91-.9 2.42 2.42 0 0 0-1.89-.92 2.42 2.42 0 0 0-1.89.92 2.42 2.42 0 0 1-1.89.9M6 14V3.5a2 2 0 1 1 4 0V8M14 14V3.5a2 2 0 1 1 4 0V8" />
                 </svg>
             )
         },
@@ -17,7 +17,7 @@ const AmenitiesIconGrid = () => {
             title: "Kids Play Area",
             icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 3v12m12-12v12M5 15h14M8 21l3-6m5 6l-3-6" />
                 </svg>
             )
         },
@@ -33,7 +33,8 @@ const AmenitiesIconGrid = () => {
             title: "Adventure Zone",
             icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    <circle cx="12" cy="12" r="10" />
+                    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
                 </svg>
             )
         },
@@ -49,7 +50,12 @@ const AmenitiesIconGrid = () => {
             title: "Indoor Games",
             icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                    <circle cx="9" cy="9" r="1.2" fill="currentColor" />
+                    <circle cx="15" cy="15" r="1.2" fill="currentColor" />
+                    <circle cx="9" cy="15" r="1.2" fill="currentColor" />
+                    <circle cx="15" cy="9" r="1.2" fill="currentColor" />
+                    <circle cx="12" cy="12" r="1.2" fill="currentColor" />
                 </svg>
             )
         }
@@ -76,10 +82,10 @@ const AmenitiesIconGrid = () => {
                         </p>
                         <button 
                             onClick={() => setIsModalOpen(true)}
-                            className="inline-flex items-center gap-2 text-[#002A22] hover:text-luxury-black font-bold uppercase tracking-widest text-[12px] transition-all duration-300 group"
+                            className="btn-gold !py-3 !px-8 !text-[14px] flex items-center gap-3 w-fit mx-auto lg:mx-0"
                         >
-                            <span>Explore Features</span>
-                            <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <span>Explore all amenities</span>
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </button>
@@ -90,7 +96,7 @@ const AmenitiesIconGrid = () => {
                         {allAmenities.map((item, index) => (
                             <div 
                                 key={index}
-                                className="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 flex flex-col items-center justify-center text-center border border-gray-50 hover:border-gold/20"
+                                className="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col items-center justify-center text-center border border-[#002a22]/25 hover:border-[#002a22]/50"
                             >
                                 <div className="w-16 h-16 rounded-2xl bg-[#faf9f8] flex items-center justify-center text-gold group-hover:bg-[#002A22] group-hover:text-white transition-all duration-500 mb-5">
                                     {item.icon}
