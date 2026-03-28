@@ -100,22 +100,22 @@ const AboutUs = () => {
                         <div className="flex flex-row items-stretch gap-2 animate-fade-up animate-delay-3">
                             <button 
                                 onClick={() => setIsModalOpen(true)} 
-                                className="bg-[#002A22] text-white flex-1 flex items-center justify-center gap-1.5 py-4 px-2 text-[8.5px] sm:text-[13px] font-heading tracking-tight sm:tracking-widest hover:bg-[#001a15] hover:-translate-y-1 hover:shadow-xl transition-all duration-300 uppercase whitespace-nowrap"
+                                className="btn-gold !flex-1 !flex items-center justify-center gap-1.5 !py-4 !px-6 !text-[8.5px] sm:!text-[13px] !font-heading !tracking-tight sm:!tracking-widest uppercase whitespace-nowrap"
                             >
-                                <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                <svg className="w-4 h-4 shrink-0 relative z-10" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                 </svg>
-                                <span>DOWNLOAD BROCHURE</span>
+                                <span className="relative z-10">DOWNLOAD BROCHURE</span>
                             </button>
                             
                             <button 
                                 onClick={() => setIsModalOpen(true)} 
-                                className="bg-[#6d6d6d] text-white flex-1 flex items-center justify-center gap-1.5 py-4 px-2 text-[8.5px] sm:text-[13px] font-heading tracking-tight sm:tracking-widest hover:bg-[#4a4a4a] hover:-translate-y-1 hover:shadow-xl transition-all duration-300 uppercase whitespace-nowrap"
+                                className="btn-gray !flex-1 !flex items-center justify-center gap-1.5 !py-4 !px-6 !text-[8.5px] sm:!text-[13px] !font-heading !tracking-tight sm:!tracking-widest uppercase whitespace-nowrap"
                             >
-                                <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                <svg className="w-4 h-4 shrink-0 relative z-10" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                 </svg>
-                                <span>DOWNLOAD PAYMENT SCHEDULE</span>
+                                <span className="relative z-10">DOWNLOAD PAYMENT SCHEDULE</span>
                             </button>
                         </div>
                     </div>

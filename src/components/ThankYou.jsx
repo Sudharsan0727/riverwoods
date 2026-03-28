@@ -69,13 +69,13 @@ const ThankYou = () => {
                     </div>
 
                     {/* Action Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-up animate-delay-1 mt-12">
-                        {/* Route Map Video */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-up animate-delay-1 mt-12">
+                        {/* Route Map Video - HIDDEN (Add 'md:block' if you want to show it in a 3-column grid) */}
                         <a 
                             href="https://www.youtube.com/watch?v=AKVrvOVASz0" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="group bg-[#f8f5f0] p-8 rounded-sm border border-gray-100 transition-all duration-500 hover:bg-[#002A22] hover:-translate-y-2 cursor-pointer shadow-sm flex flex-col items-center no-underline"
+                            className="hidden group bg-[#f8f5f0] p-8 rounded-sm border border-gray-100 transition-all duration-500 hover:bg-[#002A22] hover:-translate-y-2 cursor-pointer shadow-sm flex flex-col items-center no-underline"
                         >
                             <div className="text-gold group-hover:text-white transition-colors duration-500 mb-6 flex justify-center">
                                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
