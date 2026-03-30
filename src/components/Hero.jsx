@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PhoneInputField from './PhoneInputField';
-import heroBg from '../assets/img/Platinum_banner.jpeg';
-import heroMobileBg from '../assets/img/Platinum_Mobilebanner.jpeg';
+import heroBg from '../assets/img/Riverwoods.jpg';
+import heroMobileBg from '../assets/img/Riverwoods_mobile.jpeg';
 import { submitLead } from '../utils/submitLead';
 
 import SuccessModal from './SuccessModal';

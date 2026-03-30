@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import thankYouBg from '../assets/img/platinum/Cam_04.jpg';
+import thankYouBg from '../assets/img/riverwoods/13_Aerial_Day.jpg';
 
 const ThankYou = () => {
     useEffect(() => {

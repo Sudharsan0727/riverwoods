@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import EnquiryModal from './EnquiryModal';
-import about1 from '../assets/img/platinum/Cam_07.jpg';
-import about2 from '../assets/img/platinum/Living Cam.jpg';
+import about1 from '../assets/img/riverwoods/15_Elevation.jpg';
+import about2 from '../assets/img/riverwoods/Living_Dining_.jpg';
 import reraLogo from '../assets/img/riverwoods_Rera.png';
 
 const AboutUs = () => {

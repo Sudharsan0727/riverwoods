@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PhoneInputField from './PhoneInputField';
-import enquiry1 from '../assets/img/Enquiry1.jpg';
-import enquiry2 from '../assets/img/Enquiry2.jpg';
+import enquiry1 from '../assets/img/riverwoods/Facade_.jpg';
+import enquiry2 from '../assets/img/riverwoods/13_Aerial_Day.jpg';
 import { submitLead } from '../utils/submitLead';
 
 import SuccessModal from './SuccessModal';
@@ -82,7 +82,7 @@ const EnquirySection = () => {
                             <div className="absolute top-0 left-0 w-[70%] h-[70%] lg:w-[320px] lg:h-[420px] overflow-hidden shadow-xl z-10 animate-fade-up">
                                 <img 
                                     src={enquiry2} 
-                                    alt="Building Exterior" 
+                                    alt="Aerial View" 
                                     className="w-full h-full object-cover transition-transform duration-500 ease-out will-change-transform"
                                     style={{ 
                                         transform: `scale(${zoomImg + 0.1}) translate(${innerMoveX_Back}px, ${innerMoveY_Back}px)` 
@@ -94,7 +94,7 @@ const EnquirySection = () => {
                             <div className="absolute bottom-0 right-[5%] w-[70%] h-[70%] lg:-bottom-[20px] lg:-right-[20px] lg:w-[320px] lg:h-[420px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] z-20 animate-fade-up animate-delay-1">
                                 <img 
                                     src={enquiry1} 
-                                    alt="Luxury Interior" 
+                                    alt="Building Facade" 
                                     className="w-full h-full object-cover transition-transform duration-500 ease-out will-change-transform"
                                     style={{ 
                                         transform: `scale(${zoomImg + 0.15}) translate(${innerMoveX_Front}px, ${innerMoveY_Front}px)` 

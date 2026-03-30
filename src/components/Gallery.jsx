@@ -1,23 +1,39 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 
-import img1 from '../assets/img/platinum/Bedroom Cam.jpg';
-import img2 from '../assets/img/platinum/Cam_02_Day.jpg';
-import img3 from '../assets/img/platinum/Cam_02_Night.jpg';
-import img4 from '../assets/img/platinum/Cam_03.jpg';
-import img5 from '../assets/img/platinum/Cam_04.jpg';
-import img6 from '../assets/img/platinum/Cam_07.jpg';
-import img7 from '../assets/img/platinum/Cam_11 Twilight.jpg';
-import img8 from '../assets/img/platinum/Living Cam.jpg';
+import img1 from '../assets/img/riverwoods/13_Aerial_Day.jpg';
+import img2 from '../assets/img/riverwoods/15_Elevation.jpg';
+import img3 from '../assets/img/riverwoods/17_Entrance.jpg';
+import img4 from '../assets/img/riverwoods/10_Pool.jpg';
+import img5 from '../assets/img/riverwoods/18_Pool_Night.jpg';
+import img6 from '../assets/img/riverwoods/Living_Dining_.jpg';
+import img7 from '../assets/img/riverwoods/MBR_.jpg';
+import img8 from '../assets/img/riverwoods/Bathroom_.jpg';
+import img9 from '../assets/img/riverwoods/Gym_01.jpg';
+import img10 from '../assets/img/riverwoods/02_Amenties_.jpg';
+import img11 from '../assets/img/riverwoods/06_Amenties_.jpg';
+import img12 from '../assets/img/riverwoods/11_Pool.jpg';
+import img13 from '../assets/img/riverwoods/12_Pool.jpg';
+import img14 from '../assets/img/riverwoods/19_Pool_Night.jpg';
+import img15 from '../assets/img/riverwoods/20_Pool_Night.jpg';
+import img16 from '../assets/img/riverwoods/Facade_.jpg';
 
 const slides = [
-    { id: 1, img: img8, title: "Spacious Living", tag: "INTERIORS" },
-    { id: 2, img: img1, title: "Luxury Bedroom", tag: "INTERIORS" },
-    { id: 3, img: img4, title: "Grand Entrance", tag: "ARCHITECTURE" },
-    { id: 4, img: img3, title: "Night View", tag: "ARCHITECTURE" },
-    { id: 5, img: img2, title: "Day View", tag: "ARCHITECTURE" },
-    { id: 6, img: img5, title: "Modern Design", tag: "ARCHITECTURE" },
-    { id: 7, img: img6, title: "Building Exterior", tag: "ARCHITECTURE" },
-    { id: 8, img: img7, title: "Twilight Glow", tag: "ARCHITECTURE" },
+    { id: 1, img: img1, title: "Aerial View", tag: "ARCHITECTURE" },
+    { id: 2, img: img2, title: "Grand Elevation", tag: "ARCHITECTURE" },
+    { id: 3, img: img3, title: "Grand Entrance", tag: "ARCHITECTURE" },
+    { id: 4, img: img4, title: "Swimming Pool", tag: "AMENITIES" },
+    { id: 5, img: img5, title: "Pool at Night", tag: "AMENITIES" },
+    { id: 6, img: img6, title: "Living & Dining", tag: "INTERIORS" },
+    { id: 7, img: img7, title: "Master Bedroom", tag: "INTERIORS" },
+    { id: 8, img: img8, title: "Modern Bathroom", tag: "INTERIORS" },
+    { id: 9, img: img9, title: "State-of-the-art Gym", tag: "AMENITIES" },
+    { id: 10, img: img10, title: "Premium Amenities", tag: "AMENITIES" },
+    { id: 11, img: img11, title: "Modern Facilities", tag: "AMENITIES" },
+    { id: 12, img: img12, title: "Resort-style Pool", tag: "AMENITIES" },
+    { id: 13, img: img13, title: "Lush Pool Area", tag: "AMENITIES" },
+    { id: 14, img: img14, title: "Night Ambiance", tag: "ARCHITECTURE" },
+    { id: 15, img: img15, title: "Poolside Glow", tag: "AMENITIES" },
+    { id: 16, img: img16, title: "Stunning Facade", tag: "ARCHITECTURE" },
 ];
 
 const Gallery = () => {
