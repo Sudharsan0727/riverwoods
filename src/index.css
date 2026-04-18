@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Lora", serif;
+  --font-body: "Lora", serif;
+  --font-condensed: "Lora", serif;
+  --font-accent: "Lora", serif;
+  
+  --color-gold: #002A22;
+  --color-gold-dark: #821b22;
+  --color-luxury-black: #222222;
+  --color-luxury-gray: #fffdfb;
+  --color-luxury-text: #666666;
+}
+
+:root {
+  font-family: var(--font-body);
+  color: var(--color-luxury-black);
+  background-color: #ffffff;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.05em;
+}
+
+p {
+  color: var(--color-luxury-text);
+  line-height: 1.8;
+}
+
+/* Hide scrollbar but keep functionality */
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+.hide-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide placeholder on focus */
+input:focus::placeholder, 
+textarea:focus::placeholder {
+  color: transparent;
+}
+
+/* Custom Utilities */
+@layer components {
+  .btn-gold {
+    @apply relative px-8 py-4 bg-gold text-white font-medium overflow-hidden uppercase tracking-[0.15em] text-[10px] inline-block cursor-pointer active:translate-y-0.5;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(190, 152, 116, 0.2);
+  }
+
+  .btn-gold::before {
+    content: '';
+    @apply absolute inset-0 bg-[#6d6d6d] -z-1;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+
+  .btn-gold:hover {
+    @apply text-white -translate-y-1;
+    box-shadow: 0 20px 40px rgba(190, 152, 116, 0.4);
+  }
+
+  .btn-gold:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* Smooth Shine effect */
+  .btn-gold::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 150%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+
+  .btn-gold:hover::after {
+    left: 150%;
+  }
+
+  .btn-gray {
+    @apply relative px-8 py-4 bg-[#6d6d6d] text-white font-medium overflow-hidden uppercase tracking-[0.15em] text-[10px] inline-block cursor-pointer active:translate-y-0.5;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-gray::before {
+    content: '';
+    @apply absolute inset-0 bg-gold -z-1;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+
+  .btn-gray:hover {
+    @apply text-white -translate-y-1;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-gray:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* Smooth Shine effect for gray btn */
+  .btn-gray::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 150%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+
+  .btn-gray:hover::after {
+    left: 150%;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .lux-container {
+    @apply max-w-7xl mx-auto px-6 md:px-12;
+  }
+  
+  .section-title-sub {
+    @apply text-gold uppercase tracking-[0.3em] text-xs font-semibold mb-3 block;
+  }
+  
+  .section-title-main {
+    @apply text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight;
+  }
+
+  .glass-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    isolation: isolate;
+  }
+
+  .glass-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+/* Extra Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.animate-fade-up.is-visible {
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.animate-delay-1 { animation-delay: 0.2s; }
+.animate-delay-2 { animation-delay: 0.4s; }
+.animate-delay-3 { animation-delay: 0.6s; }
+
+/* Modal specific animations */
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalScaleIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-modal-overlay {
+  animation: modalFadeIn 0.3s ease-out forwards;
+}
+
+.animate-modal-content {
+  animation: modalScaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
