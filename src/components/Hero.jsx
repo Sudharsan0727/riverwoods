@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PhoneInputField from './PhoneInputField';
-import heroBg from '../assets/img/Riverwoods.jpg';
+import heroBg from '../assets/img/Riverwoods.jpeg';
 import heroMobileBg from '../assets/img/Riverwoods_mobile.jpg';
 import { submitLead } from '../utils/submitLead';
 

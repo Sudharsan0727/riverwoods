@@ -41,7 +41,7 @@ export const submitLead = (formData) => {
     utm_content: urlParams.get('utm_content') || "",
     utm_device: urlParams.get('utm_device') || "",
     utm_gclid: urlParams.get('utm_gclid') || "",
-    utm_keyword: urlParams.get('utm_keyword') || "",
+    utm_keyword: urlParams.get('utm_keyword') || urlParams.get('utm_term') || urlParams.get('keyword') || "",
     utm_loc_interest: urlParams.get('utm_loc_interest') || "",
     utm_loc_physical: urlParams.get('utm_loc_physical') || "",
     utm_matchtype: urlParams.get('utm_matchtype') || "",
@@ -51,7 +51,7 @@ export const submitLead = (formData) => {
     utm_source: urlParams.get('utm_source') || "",
   };
 
-  const salesforceUrl = "https://radiancerealty--partial.sandbox.my.salesforce-sites.com/extrenalsource/services/apexrest/createLead";
+  const salesforceUrl = "https://radiancerealty.my.salesforce-sites.com/LeadService/services/apexrest/createLead";
 
   // Trigger Salesforce API (Background)
   fetch(salesforceUrl, {
@@ -63,18 +63,18 @@ export const submitLead = (formData) => {
 
   // Trigger Email API (Using fetch with keepalive to ensure it finishes)
   fetch('https://radiancedevelopers.com/api/send-email', {
-  //fetch('http://localhost:5000/send-email', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-          fullName,
-          email,
-          mobile,
-          project: project
-      }),
-      keepalive: true
+    //fetch('http://localhost:5000/send-email', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      fullName,
+      email,
+      mobile,
+      project: project
+    }),
+    keepalive: true
   }).catch(err => console.error("Email Error:", err));
 
   // RETURN IMMEDIATELY so the user doesn't wait
-  return Promise.resolve(true); 
+  return Promise.resolve(true);
 };
